@@ -1,0 +1,874 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Montserrat:wght@100;300;400;700;900&display=swap');
+ 
+
+:root {
+    --blue: #1D3354;
+    --darkpurple: #160C28;
+    --white: #EAEAEA;
+    --green: #0C7C59;
+    --orange: #C8553D;
+
+    font-family: 'Lato', sans-serif;
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+  }
+  *::-webkit-scrollbar-track {
+    background:#EAEAEA;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #1D3354;
+    border-radius: 20px;
+    border: 3px solid#EAEAEA;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-weight: 300;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(45deg, #909cad, #283a55);
+    /* cursor: none; */
+    perspective: 1400px;
+}
+
+.cursor {
+    display: none;
+    width: 20px;
+    height: 20px;
+    background-color: var(--orange);
+    border-radius: 50%;
+    z-index: 13;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    position: fixed;
+}
+
+.portrait-mode {
+    background-color: white;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    z-index: 1000;
+    text-transform: uppercase;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.portrait-mode p {
+    position: absolute;
+    top: 40%;
+    margin: 0 1em;
+}
+
+section:hover .cursor {
+    background-color: var(--orange);
+    width: 25px;
+    height: 25px;
+}
+
+.loadicon {
+    height: 100vh;
+    width: 100vw;
+    position: sticky;
+    top:0;
+    left:0;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 12;
+    display: none;
+}
+
+.loadicon img {
+    margin: auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.alertContainer {
+    display: none;
+    position: absolute;
+    top: 3em;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80vw;
+    height: 350px;
+    background-color: var(--white);
+    opacity: 1;
+    z-index: 12;
+    border-radius: 25px;
+    box-shadow: 5px 1px 20px rgba(0, 0, 0, 0.3);
+    min-height: 4em;
+}
+
+.alertheader {
+    background: var(--green);
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    color: white;
+    padding: 0.4em 1em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.alertbody {
+    height: 100%;
+    position: relative;
+}
+
+.alertMessage {
+    padding: 1em;
+    font-size: 1.4em;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.btnok {
+    margin: auto;
+    text-decoration: none;
+    color: white;
+    background-color: var(--green);
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    text-align: center;
+    padding: 0.5em 1em;
+    border-radius: 25px;
+    transition: 0.25s;
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    right: 0;
+}
+
+.btnok:hover {
+    background-color: #07583f;
+}
+
+.postcode-entrybox-container {
+    width: 100%;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em 0;
+}
+
+.postcode-entrybox {
+    width: 50%;
+    height: 3.2em;
+    position: relative;
+    overflow: hidden;
+}
+
+.postcode-entrybox input {
+    width: 100%;
+    height: 100%;
+    color: #242424;
+    border: none;
+    background-color: var(--white);
+    margin: 0;
+    /* cursor: text; */
+    padding: 0;
+    padding-top: 9px;
+    font-size: 18px;
+    font-weight: 200;
+    outline: none;
+}
+
+.postcode-entrybox label {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+}
+
+.postcode-entrybox label::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: -1px;
+    border-bottom: 3px solid var(--green);
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+
+.postcode-entrybox span {
+    position: absolute;
+    bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.postcode-entrybox input:valid + .postcode-box-label span {
+    transform: translateY(-130%);
+    color: var(--green);
+    font-size: 90%;
+}
+
+.postcode-entrybox input:valid + .postcode-box-label::after {
+    transform: translateX(0%);
+}
+
+.postcode-error {
+    text-align: center;
+    color: red;
+    display: none;
+    animation-name: "shake";
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% {
+        left: 0;
+        right: 0;
+    }
+    33% {
+        left: 3px;
+    }
+    66% {
+        right: 3px;
+    }
+
+    100% {
+        left: 0;
+        right: 0;
+    }
+}
+
+main {
+    height: 100vh;
+    color: white;
+    z-index: 2;
+}
+
+nav {
+    padding: 2em;
+    display: block;
+    margin: 0 0 2em 0;
+    font-size: 20px;
+}
+
+nav p {
+    padding: 0 1em;
+    float: left;
+    font-size: 23px;
+}
+
+nav ul {
+    list-style: none;
+    float: right;
+    padding: 5px 0;
+    font-size: 19px;
+}
+
+nav ul li {
+    display: inline;
+    padding: 0.5em;
+    transition: 1s;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--blue);
+    background-color: var(--white);
+    padding: 0.5em 1em;
+    transition: 0.2s;
+    border-radius: 24px;
+}
+
+.expandnav {
+    float: right;
+    position: relative;
+    bottom: 5px;
+    display: none;
+}
+
+.expandnav span {
+    font-size: 40px;
+    z-index: 10;
+}
+
+.navphone ul{
+    display: none;
+}
+
+.main {
+    padding: 3em;
+    text-align: center;
+    /* position: absolute;
+    top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    z-index: 1;
+    /* width: 60vw; */
+}
+
+.main h1 {
+    font-size: 4em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    pointer-events: none;
+}
+
+.main p {
+    font-size: 2em;
+    font-weight: 300;
+    font-family: 'Lato';
+    margin: 0.5em;
+    pointer-events: none;
+}
+
+.learnmore {
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: 300;
+    font-family: 'Lato';
+
+    color: white;
+    padding: 0.7em;
+    
+    background-color: var(--green);
+    border-radius: 24px;
+    position: relative;
+    transition: 1s;
+    box-shadow: 1px 1px 0.5rem rgba(0, 0, 0, 0.3);
+    border: none;
+    transition: 0.5s;
+}
+
+.learnmore:hover {
+    background-color: #044631;
+    padding: 1em;
+}
+
+.learnmore span {
+    font-size: 20px;
+    padding: 0 5px 0 0;
+    position: relative;
+    top: 3px;
+}
+
+#learnbtn {
+    height: 15vw;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    bottom: 2em;
+    z-index: 9;
+}
+
+.or-enter-manually {
+    position: relative;
+    bottom: 3.5em;
+    z-index: 10;
+}
+
+.or-enter-manually p {
+    color: var(--white);
+    text-decoration: underline;
+    font-size: 20px !important;
+}
+
+.or-enter-manually a {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 96vw;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+#learnsection {
+    height: 100vh;
+
+    
+    padding: 4em;
+
+    overflow: hidden;
+
+    display: block;
+}
+
+.start-times-container {
+    background-color: #cccccc;
+    padding: 1em;
+    border-radius: 30px;
+    box-shadow: 4px 3px 25px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #b4b4b4;
+    border-right: 1px solid #b4b4b4;
+}
+
+.start-times-title {
+    text-transform: uppercase;
+    font-size: 1.4em;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding-bottom: 0.3em;
+}
+
+.name-and-time-container-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.name-and-time-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.3em;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    padding: 1em;
+}
+
+.fajr {
+    border-left: none;
+}
+
+.isha {
+    border-right: none;
+}
+
+.jamat-times-container {
+    background: linear-gradient(45deg, var(--blue), #1f4f97);
+    color: white;
+    padding: 1em;
+    border-radius: 30px;
+    margin-top: 1em;
+    box-shadow: 4px 3px 25px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    transform-style: preserve-3d;
+}
+
+#defaultmosque{
+    background: var(--green);
+    color: white;
+    border: #044631;
+    padding: 10px;
+    border-radius: 30px;
+    margin-top: 5px;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition-duration: 1000ms;
+
+}
+#defaultmosque:active{
+    background: #1D3354;
+
+}
+
+.jamat-times-title {
+    text-transform: uppercase;
+    font-size: 1.3em;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding-bottom: 0.3em;
+    transform-style: preserve-3d;
+}
+
+.mosque-select-container {
+    display: none;
+    flex-direction: column;
+    position: relative;
+}
+
+.dropdown-bar {
+    background-color: var(--green);
+    padding: 0.4em 1.3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    margin: 0.3em 0;
+    font-size: 1em;
+}
+
+.dropdown-bar span {
+    transform: rotate(90deg);
+    transition: all 1s ease;
+}
+
+.mosques-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 37px;
+    background-color: var(--green);
+    width: 100%;
+    align-items: center;
+    margin: auto;
+    padding: 0em;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.mosques-dropdown-menu a {
+    font-size: 1em;
+    padding: 1em;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.mosques-dropdown-menu a:hover {
+    background-color: #B4B4B4;
+    color: black;
+}
+
+.last-dropdown {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.jamat-name-and-time-container-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.jamat-name-and-time-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.3em;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    padding: 0.5em;
+}
+
+.mosque-1, .mosque-2, .mosque-3, .mosque-4 {
+    transform-style: preserve-3d;
+}
+
+.location {
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    bottom: 25px;
+}
+
+.location p {
+    font-family: 'Lato';
+    font-size: 18px;
+    display: inline;
+}
+
+.location span {
+    display: inline;
+    position: relative;
+    top: 5px;
+    margin-right: 5px;
+}
+
+.mosque-number-title {
+    font-size: 1.2em;
+    padding: 0.3em;
+}
+
+footer {
+    background-color: var(--green);
+    color: var(--white);
+    padding: none;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    padding: 1em;
+}
+
+@keyframes bounceDown {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: 4px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .main h1 {
+        font-size: 4em;
+    }
+    .main p {
+        font-size: 1.5em;
+    }
+    .main a {
+        font-size: 1.25em;
+    }
+    #learnbtn {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    body {
+        /* cursor: auto !important; */
+    }
+
+    a {
+        /* cursor: pointer !important; */
+    }
+    .cursor {
+        display: none;
+    }
+
+    .expandnav {
+        z-index: 11;
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .navphone ul {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        left: 0;
+        top: 0;
+        text-align: center;
+        justify-content: center;
+        margin: auto;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.9);
+        margin: 0;
+        padding: 0;
+    }
+
+    .navphone ul li a {
+        color: var(--blue);
+        text-decoration: none;
+        font-size: 3em;
+        font-weight: 300;
+    }
+
+    nav p {
+        text-align: center;
+    }
+
+    .main h1 {
+        font-size: 35px;
+        text-align: center;
+        justify-content: center;
+    }
+    .main p {
+        font-size: 22px;
+    }
+    .main a {
+        font-size: 18px;
+    }
+
+    #learnbtn {
+        position: relative;
+        top: 20px;
+        width: 100%;
+    }
+
+    .or-enter-manually {
+        position: relative;
+        top: 1em;
+    }
+
+    .expandnav {
+        cursor: pointer;
+    }
+
+    #learnsection {
+        padding: 3em 2em 2em 2em;
+        display: block;
+        height: 75vh;
+    }
+
+    .scrolldown {
+        top: 1px;
+    }
+
+    .start-times-container {
+        max-width: 660px;
+    }
+
+    .start-times-title {
+        font-size: 1.1em;
+    }
+
+    .name-and-time-container-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }    
+
+    .name-and-time-container {
+        font-size: 0.95em;
+        padding: 2%;
+        border-left: 1px solid #b4b4b4;
+        border-right: 1px solid #b4b4b4;
+    }
+
+    .fajr {
+        border-left: none;
+    }
+
+    .isha {
+        border-right: none;
+    }
+
+    .jamat-times-title {
+        font-size: 1.1em;
+    }
+
+    .jamat-times-container {
+        background: linear-gradient(45deg, var(--blue), #1f4f97);
+        color: white;
+        padding: 1em;
+        border-radius: 30px;
+        margin-top: 1em;
+        box-shadow: 4px 3px 25px rgba(0, 0, 0, 0.2);
+        max-width: 100%;
+    }
+    
+    .jamat-times-title {
+        text-transform: uppercase;
+        font-size: 1.3em;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        padding-bottom: 0.3em;
+        transition: all 0.5s ease;
+    }
+    
+    .mosque-select-container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        transition: all 0.5s ease;
+        z-index: 10;
+    }
+    
+    .dropdown-bar {
+        background-color: var(--green);
+        padding: 0.4em 1.3em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 20px;
+        margin: 0.3em 0;
+        font-size: 0.8em;
+    }
+    
+    .dropdown-bar span {
+        transform: rotate(90deg);
+        transition: all 1s ease;
+    }
+    
+    .mosques-dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 37px;
+        background-color: var(--green);
+        width: 100%;
+        align-items: center;
+        margin: auto;
+        padding: 0em;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    
+    .mosques-dropdown-menu a {
+        font-size: 0.8em;
+        padding: 1em;
+        transition: all 0.3s ease;
+    }
+    
+    .mosques-dropdown-menu a:hover {
+        background-color: #B4B4B4;
+        color: black;
+    }
+    
+    .last-dropdown {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    #mosque-dropdown {
+        width: 100%;
+        padding: 0.5em;
+        margin: 2px;
+        background-color: var(--green);
+        outline: none;
+        border-radius: 15px;
+        border: none;
+        color: white;
+    }
+    
+    .jamat-name-and-time-container-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        font-size: 0.65em;
+    }
+
+    .mosque-2, .mosque-3, .mosque-4 {
+        display: none;
+    }
+
+    .mosque-number-title {
+        display: none;
+    }
+}
