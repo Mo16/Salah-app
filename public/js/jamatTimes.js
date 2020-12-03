@@ -56,11 +56,11 @@ async function showDefaultMosque(data){
 
 
 function fillJamatTimes(times) {
-    document.querySelector('.j-isha').innerHTML = times.fajr;
-    document.querySelector('.j-maghrib').innerHTML = times.zuhr;
+    document.querySelector('.j-fajr').innerHTML = times.fajr;
+    document.querySelector('.j-zuhr').innerHTML = times.zuhr;
     document.querySelector('.j-asr').innerHTML = times.asr;
-    document.querySelector('.j-zuhr').innerHTML = times.maghrib;
-    document.querySelector('.j-fajr').innerHTML = times.esha;
+    document.querySelector('.j-maghrib').innerHTML = times.maghrib;
+    document.querySelector('.j-isha').innerHTML = times.esha;
 }
 
 function fillJamatTimesDesktop(times) {
