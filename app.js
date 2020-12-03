@@ -16,4 +16,3 @@ function runScraper() {
 }
 
 runScraper();
-DataTransferItemList
