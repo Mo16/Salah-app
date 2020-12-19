@@ -211,6 +211,3 @@ function fillJamatTimesDesktop(times) {
     }
 
 }
-
-
-

@@ -55,6 +55,7 @@ body {
 }
 
 .portrait-mode {
+    display: none;
     background-color: white;
     position: sticky;
     top: 0;
@@ -435,12 +436,14 @@ canvas {
 }
 
 .start-times-container {
-    background-color: var(--white);
+    background-color: rgba(244, 242, 243, 0.7);
     padding: 1em;
     border-radius: 30px;
     box-shadow: 4px 3px 25px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid #b4b4b4;
     border-right: 1px solid #b4b4b4;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
 }
 
 .start-times-title {

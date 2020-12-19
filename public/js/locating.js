@@ -55,21 +55,44 @@ function postCodeLocate(postcode){
     })
 }
 
+async function getCity(longitude, latitude) {
+    const response = await fetch(`https://geocode.xyz/${latitude},${longitude}?json=1&auth=518769519549893434x61430`);
+    let data = await response.json();
 
-function getCity(longitude, latitude) {
-    fetch(`https://geocode.xyz/${latitude},${longitude}?json=1&auth=518769519549893434x61430`)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-            city = data.adminareas.admin6.name
-            Cookies.set("city", city, {expires: 9999, samesite: 'lax'});
-            document.querySelector('.location p').innerHTML = Cookies.get("city")
-            loadJamatTimes(city);
-            loadHide()
-    })
-}
+    console.log(data);
     
+    let city = await validateCity(data);
+    
+    console.log(city);
+    Cookies.set("city", city, {expires: 9999, samesite: 'lax'});
+    document.querySelector('.location p').innerHTML = Cookies.get("city")
+    loadJamatTimes(city);
+    loadHide();
+}
+
+async function validateCity(data, cities) {
+    const mosqueData = await fetch('data/mosqueData.json');
+    const mosqueDataJson = await mosqueData.json();
+
+    var city;
+    let mosqueCities = [];
+
+    Object.values(mosqueDataJson).map((mosque) => {
+        mosqueCities.push(mosque.city);
+    }).join('');
+
+    console.log(mosqueCities);
+
+    if (mosqueCities.includes(data.adminareas.admin6.name)) {
+        city = data.adminareas.admin6.name;
+    } else {
+        city = data.city;
+    }
+
+    console.log(city);
+
+    return city.toLowerCase();
+}
 
 
 

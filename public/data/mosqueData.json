@@ -22,7 +22,7 @@
     "fajr": "7:00 AM",
     "zuhr": "12:45 PM",
     "asr": "2:45 PM",
-    "maghrib": "4:03 PM",
+    "maghrib": "4:04 PM",
     "esha": "7:15 PM"
   },
   "didsburymosqueData": {
@@ -64,6 +64,19 @@
     "maghrib": "03:54",
     "esha": "06:00"
   },
+  "eastlondonmosqueData": {
+    "city": "London",
+    "value": "eastlondonmosqueData",
+    "dropdownid": "East London Mosque",
+    "name": "eastlondonmosque",
+    "longitude": -0.0676762,
+    "latitude": 51.5175695,
+    "fajr": "06:49",
+    "zuhr": "12:45",
+    "asr": "02:30",
+    "maghrib": "04:03",
+    "esha": "07:30"
+  },
   "finsburyparkmosqueData": {
     "city": "London",
     "value": "finsburyparkmosqueData",
@@ -76,5 +89,18 @@
     "asr": "14:00",
     "maghrib": "16:03",
     "esha": "18:30"
+  },
+  "glasgowCentralData": {
+    "city": "Glasgow",
+    "value": "glasgowCentralData",
+    "dropdownid": "Glasgow Central Mosque",
+    "name": "glasgowCentral",
+    "longitude": -4.251607,
+    "latitude": 55.852387,
+    "fajr": "7:00am",
+    "zuhr": "1:00pm",
+    "asr": "2:10pm",
+    "maghrib": "3:53pm",
+    "esha": "8:00pm"
   }
 }
