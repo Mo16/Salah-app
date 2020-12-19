@@ -700,10 +700,14 @@ footer p {
         padding: 0;
     }
 
+    .navphone ul li {
+        list-style: none;
+    }
+
     .navphone ul li a {
         color: var(--white);
         text-decoration: none;
-        font-size: 3em;
+        font-size: 2.4em;
         font-weight: 300;
     }
 
@@ -786,7 +790,7 @@ footer p {
     .jamat-times-container {
         background: linear-gradient(45deg, var(--complementary), var(--complementary-dark));
         color: white;
-        padding: 1em;
+        padding: 1em 0.5em;
         border-radius: 30px;
         margin-top: 1em;
         box-shadow: 4px 3px 25px rgba(0, 0, 0, 0.2);
@@ -810,56 +814,12 @@ footer p {
         transition: all 0.5s ease;
         z-index: 10;
     }
-    
-    .dropdown-bar {
-        background-color: var(--white);
-        padding: 0.4em 1.3em;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 20px;
-        margin: 0.3em 0;
-        font-size: 0.8em;
-    }
-    
-    .dropdown-bar span {
-        transform: rotate(90deg);
-        transition: all 1s ease;
-    }
-    
-    .mosques-dropdown-menu {
-        display: none;
-        position: absolute;
-        top: 37px;
-        background-color: var(--white);
-        width: 100%;
-        align-items: center;
-        margin: auto;
-        padding: 0em;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-    }
-    
-    .mosques-dropdown-menu a {
-        font-size: 0.8em;
-        padding: 1em;
-        transition: all 0.3s ease;
-    }
-    
-    .mosques-dropdown-menu a:hover {
-        background-color: #B4B4B4;
-        color: black;
-    }
-    
-    .last-dropdown {
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-    }
 
     #mosque-dropdown {
         width: 100%;
         min-height: 1em;
         padding: 1em;
+        margin: 3px;
         color: black;
         margin: 2px;
         background-color: var(--white);
