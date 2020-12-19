@@ -764,10 +764,11 @@ footer p {
     }    
 
     .name-and-time-container {
-        font-size: 1.1em;
-        padding: 2%;
-        border-left: 1px solid #b4b4b4;
-        border-right: 1px solid #b4b4b4;
+        font-size: 1em;
+        padding: 0em;
+        padding-top: 1em;
+        /* border-left: 1px solid var(--secondary);
+        border-right: 1px solid var(--secondary); */
     }
 
     .fajr {
@@ -865,7 +866,7 @@ footer p {
         outline: none;
         border-radius: 15px;
         border: none;
-        color: white;
+        color: var(--black);
     }
 
     select {
@@ -873,10 +874,12 @@ footer p {
     }
     
     .jamat-name-and-time-container-container {
+        padding: 0;
+        padding-top: 1em;
         display: flex;
         justify-content: space-between;
         flex-direction: row;
-        font-size: 0.65em;
+        font-size: 0.7em;
     }
 
     .mosque-2, .mosque-3, .mosque-4 {
