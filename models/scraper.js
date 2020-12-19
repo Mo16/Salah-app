@@ -8,6 +8,7 @@ var masjidnoorData,
   portsmouthcentralmosqueData,
   eastlondonmosqueData,
   finsburyparkmosqueData,
+  glasgowCentralData,
   filePath = "public/data/mosqueData.json";
 
 var scrapeit = async function scrapeSite() {
@@ -20,6 +21,7 @@ var scrapeit = async function scrapeSite() {
     "http://www.portsmouthcentralmasjid.com/",
     "https://www.towerhamletsmosques.co.uk/elm/",
     "https://finsburyparkmosque.org/about-us/prayer-timetable/",
+    "https://centralmosque.co.uk"
   ];
   for (let i = 0; i < mosqueList.length; i++) {
     try{
@@ -56,6 +58,10 @@ var scrapeit = async function scrapeSite() {
           console.log(url)
           await finsburyparkmosque()
           break;
+        case "https://centralmosque.co.uk":
+          console.log(url);
+          await glasgowCentral(page);
+          break;
       }
     }catch(err){
       console.log(`Not parsed ${url} because:\n${err}`)
@@ -73,7 +79,7 @@ async function jamimosque(page) {
     let maghrib = document.querySelector("body > main > section.section.background-dark > div > div > div.s-12.m-12.l-4.margin-m-bottom.prayer-times > div:nth-child(8) > div:nth-child(2)").innerText;
     let esha = document.querySelector("body > main > section.section.background-dark > div > div > div.s-12.m-12.l-4.margin-m-bottom.prayer-times > div:nth-child(9) > div:nth-child(3)").innerText;
     return {
-      city: "Portsmouth",
+      city: "portsmouth",
       value: "jamimosqueData",
       dropdownid: "Portsmouth Jami Mosque",
       name: "jamimosque",
@@ -91,6 +97,7 @@ async function jamimosque(page) {
 }
 
 async function didsburymosque(page) {
+  await page.waitForSelector('body > section.main-section > div.container > div > div > div.col-md-4.col-xs-12.col-sm-12.nopadding.pTimes > div > div > table > tbody > tr:nth-child(3) > td.jamah');
   try{
     let data = await page.evaluate(() => {
       let fajr = document.querySelector("body > section.main-section > div.container > div > div > div.col-md-4.col-xs-12.col-sm-12.nopadding.pTimes > div > div > table > tbody > tr:nth-child(3) > td.jamah").innerHTML;
@@ -99,7 +106,7 @@ async function didsburymosque(page) {
       let maghrib = document.querySelector("body > section.main-section > div.container > div > div > div.col-md-4.col-xs-12.col-sm-12.nopadding.pTimes > div > div > table > tbody > tr:nth-child(7) > td.jamah").innerHTML;
       let esha = document.querySelector("body > section.main-section > div.container > div > div > div.col-md-4.col-xs-12.col-sm-12.nopadding.pTimes > div > div > table > tbody > tr:nth-child(8) > td.jamah").innerHTML;
       return {
-        city: "Greater Manchester",
+        city: "greater manchester",
         value: "didsburymosqueData",
         dropdownid: "Didsbury Mosque",
         name: "didsburymosque",
@@ -127,7 +134,7 @@ async function masjidnoor(page) {
     let maghrib = document.querySelector("#cycle-slideshow > div > table > tbody > tr:nth-child(13) > td:nth-child(3)").innerText;
     let esha = document.querySelector("#cycle-slideshow > div > table > tbody > tr:nth-child(15) > td:nth-child(3)").innerText;
     return {
-      city: "Greater Manchester",
+      city: "greater manchester",
       value: "masjidnoorData",
       dropdownid: "Masjid e Noor",
       name: "masjidnoor",
@@ -152,7 +159,7 @@ async function masjidhidaya(page) {
     let maghrib = document.querySelector("#schedule-today > table > tbody > tr:nth-child(6) > td:nth-child(3)").innerText;
     let esha = document.querySelector("#schedule-today > table > tbody > tr:nth-child(7) > td:nth-child(3)").innerText;
     return {
-      city: "Greater Manchester",
+      city: "greater manchester",
       value: "masjidhidayaData",
       name: "masjidhidaya",
       dropdownid: "Masjid E Hidaya",
@@ -178,7 +185,7 @@ async function portsmouthcentralmosque(page) {
       let maghrib = document.querySelector("#table > tbody > tr:nth-child(5) > td:nth-child(3) > span").innerText;
       let esha = document.querySelector("#table > tbody > tr:nth-child(6) > td:nth-child(3) > span").innerText;
       return {
-        city: "Portsmouth",
+        city: "portsmouth",
         value: "portsmouthcentralmosqueData",
         dropdownid: "Portsmouth Central Mosque",
         name: "portsmouthcentralmosque",
@@ -200,6 +207,7 @@ async function portsmouthcentralmosque(page) {
 }
 
 async function eastlondonmosque(page) {
+  await page.waitForSelector('#fajr > td.prayer-jamaah > span');
   try{
     let data = await page.evaluate(() => {
       let fajr = document.querySelector("#fajr > td.prayer-jamaah > span").innerHTML;
@@ -208,7 +216,7 @@ async function eastlondonmosque(page) {
       let maghrib = document.querySelector("#maghrib > td.prayer-jamaah > span").innerHTML;
       let esha = document.querySelector("#isha > td.prayer-jamaah > span").innerHTML;
       return {
-        city: "London",
+        city: "london",
         value: "eastlondonmosqueData",
         dropdownid: "East London Mosque",
         name: "eastlondonmosque",
@@ -239,7 +247,7 @@ async function finsburyparkmosque(page) {
       let maghrib = document.querySelector("#prayertimediv > span > table > tbody > tr:nth-child(3) > td:nth-child(5)").innerText;
       let esha = document.querySelector("#prayertimediv > span > table > tbody > tr:nth-child(3) > td:nth-child(6)").innerText;
       return {
-        city: "London",
+        city: "london",
         value: "finsburyparkmosqueData",
         dropdownid: "Finsbury Park Mosque",
         name: "finsburyparkmosque",
@@ -254,10 +262,53 @@ async function finsburyparkmosque(page) {
     });
     finsburyparkmosqueData = data;
 
-    }catch(err){
-      await page.close()
-      console.log("Couldnt get data because: \n"+ err)
-    }
+    } catch(err){
+      await page.close();
+      console.log("Couldnt get data because: \n"+ err);
+    };
+  };
+
+  async function glasgowCentral(page) {
+    try {
+      let browser = await puppeteer.launch();
+      const page = await browser.newPage();
+      await page.goto(url);
+      await page.waitForSelector('#content-section-2 > div > div > div.col-md-5.columns > div > div.col-md-12.simple-column > div > div > table > tbody > tr:nth-child(2) > td.masjidnow-salah-time-iqamah.masjidnow-fajr');
+      await page.waitForSelector('#content-section-2 > div > div > div.col-md-5.columns > div > div.col-md-12.simple-column > div > div > table > tbody > tr:nth-child(4) > td.masjidnow-salah-time-iqamah.masjidnow-dhuhr');
+      await page.waitForSelector('#content-section-2 > div > div > div.col-md-5.columns > div > div.col-md-12.simple-column > div > div > table > tbody > tr:nth-child(5) > td.masjidnow-salah-time-iqamah.masjidnow-asr');
+      await page.waitForSelector('#content-section-2 > div > div > div.col-md-5.columns > div > div.col-md-12.simple-column > div > div > table > tbody > tr:nth-child(6) > td.masjidnow-salah-time-iqamah.masjidnow-maghrib');
+      await page.waitForSelector('#content-section-2 > div > div > div.col-md-5.columns > div > div.col-md-12.simple-column > div > div > table > tbody > tr:nth-child(7) > td.masjidnow-salah-time-iqamah.masjidnow-isha');
+
+
+
+      let data = await page.evaluate(() => {
+        let fajr = document.querySelector('#content-section-2 > div > div > div.col-md-5.columns > div > div.col-md-12.simple-column > div > div > table > tbody > tr:nth-child(2) > td.masjidnow-salah-time-iqamah.masjidnow-fajr').innerText;
+        let zuhr = document.querySelector('#content-section-2 > div > div > div.col-md-5.columns > div > div.col-md-12.simple-column > div > div > table > tbody > tr:nth-child(4) > td.masjidnow-salah-time-iqamah.masjidnow-dhuhr').innerText;
+        let asr = document.querySelector('#content-section-2 > div > div > div.col-md-5.columns > div > div.col-md-12.simple-column > div > div > table > tbody > tr:nth-child(5) > td.masjidnow-salah-time-iqamah.masjidnow-asr').innerText;
+        let maghrib = document.querySelector('#content-section-2 > div > div > div.col-md-5.columns > div > div.col-md-12.simple-column > div > div > table > tbody > tr:nth-child(6) > td.masjidnow-salah-time-iqamah.masjidnow-maghrib').innerText;
+        let esha = document.querySelector('#content-section-2 > div > div > div.col-md-5.columns > div > div.col-md-12.simple-column > div > div > table > tbody > tr:nth-child(7) > td.masjidnow-salah-time-iqamah.masjidnow-isha').innerText;  
+        
+        return {
+          city: "glasgow",
+          value: "glasgowCentralData",
+          dropdownid: "Glasgow Central Mosque",
+          name: "glasgowCentral",
+          longitude: -4.251607,
+          latitude: 55.852387,
+          fajr,
+          zuhr,
+          asr,
+          maghrib,
+          esha,
+        };
+      });
+
+      glasgowCentralData = data;
+
+    } catch(err) {
+      await page.close();
+      console.log("Couldn't get data because: \n" + err);
+    };
   }
 
 
@@ -270,7 +321,8 @@ function parse() {
     masjidhidayaData,
     masjidnoorData,
     eastlondonmosqueData,
-    finsburyparkmosqueData
+    finsburyparkmosqueData,
+    glasgowCentralData
   };
   jsonData = JSON.stringify(mosques,null, 2);
   fs.writeFile(filePath, jsonData, function (err) {
