@@ -48,7 +48,7 @@ function init() {
         let y = Math.random() * (innerHeight - size * 2);
         let direcionX = (Math.random() * 1) - 0.2;
         let direcionY = (Math.random() * 1) - 0.2;
-        let colour = '#EAEAEA';
+        let colour = '#FFFFFF';
 
         particleArray.push(new Particle(x, y, direcionX, direcionY, size, colour));
     }

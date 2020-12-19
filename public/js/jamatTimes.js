@@ -64,6 +64,8 @@ function fillJamatTimes(times) {
 }
 
 function fillJamatTimesDesktop(times) {
+    document.querySelector('#defaultmosque').style.display = 'none';
+
     let m1title = document.querySelector('#mosque-1-title');
     let m2title = document.querySelector('#mosque-2-title');
     let m3title = document.querySelector('#mosque-3-title');
@@ -109,6 +111,9 @@ function fillJamatTimesDesktop(times) {
 
 
     switch(mosqueNames.length) {
+        case 0:
+            document.querySelector('.jamat-times-container').style.display = 'none';
+
         case 66:
             m1title.innerHTML = mosqueNames[0];
             m2title.style.display = "none";
@@ -124,6 +129,8 @@ function fillJamatTimesDesktop(times) {
             m1asr.innerHTML = mosqueNames[3];
             m1maghrib.innerHTML = mosqueNames[4];
             m1isha.innerHTML = mosqueNames[5];
+
+
             
         case 132:
             m1title.innerHTML = mosqueNames[0];

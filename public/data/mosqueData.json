@@ -9,7 +9,7 @@
     "fajr": "07:00",
     "zuhr": "01:00",
     "asr": "02:30",
-    "maghrib": "04:04",
+    "maghrib": "04:03",
     "esha": "07:00"
   },
   "portsmouthcentralmosqueData": {
@@ -32,10 +32,10 @@
     "name": "didsburymosque",
     "longitude": -2.2490131,
     "latitude": 53.4227222,
-    "fajr": "7:00 am",
+    "fajr": "7:15 am",
     "zuhr": "12:30 pm",
     "asr": "2:15 pm",
-    "maghrib": "3:52 pm",
+    "maghrib": "3:51 pm",
     "esha": "7:30 pm"
   },
   "masjidhidayaData": {
@@ -48,8 +48,8 @@
     "fajr": "7:30",
     "zuhr": "12:45",
     "asr": "3:00",
-    "maghrib": "3:55",
-    "esha": "7:45"
+    "maghrib": "3:53",
+    "esha": "6:00"
   },
   "masjidnoorData": {
     "city": "Greater Manchester",
@@ -61,21 +61,8 @@
     "fajr": "07:15",
     "zuhr": "01:00",
     "asr": "03:00",
-    "maghrib": "03:55",
-    "esha": "07:00"
-  },
-  "eastlondonmosqueData": {
-    "city": "London",
-    "value": "eastlondonmosqueData",
-    "dropdownid": "East London Mosque",
-    "name": "eastlondonmosque",
-    "longitude": -0.0676762,
-    "latitude": 51.5175695,
-    "fajr": "06:32",
-    "zuhr": "12:45",
-    "asr": "02:30",
-    "maghrib": "04:04",
-    "esha": "07:30"
+    "maghrib": "03:54",
+    "esha": "06:00"
   },
   "finsburyparkmosqueData": {
     "city": "London",
@@ -86,8 +73,8 @@
     "latitude": 51.5689034,
     "fajr": "06:30",
     "zuhr": "12:30",
-    "asr": "14:oo",
-    "maghrib": "16:04",
+    "asr": "14:00",
+    "maghrib": "16:03",
     "esha": "18:30"
   }
 }

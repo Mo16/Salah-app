@@ -135,13 +135,11 @@ window.addEventListener('resize' , e => {
             document.querySelector('.portrait-mode').display = "block";
         } else {
             document.querySelector('.portrait-mode').display = "none";
-            button.style.display = "block"
-            console.log("mobile")
+            button.style.display = "block";
         }
     } else {
         document.querySelector('.portrait-mode').display = "none";
-        button.style.display = "none"
-        console.log('This is not a mobile device.')
+        button.style.display = "none";
     }
 });
 
