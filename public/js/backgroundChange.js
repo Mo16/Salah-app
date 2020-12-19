@@ -1,28 +1,22 @@
-function dayOrNight() {
+async function dayOrNight() {
     api = "2ca0429921c28bac953e647ade71e1ff";
     url = "https://api.openweathermap.org/data/2.5/weather";
-    fetch(`${url}?lat=${Cookies.get("latitude")}&lon=${Cookies.get("longitude")}&appid=${api}&units=metric`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        weatherData = data;
-        background();
-      });
+
+    const response = await fetch(`${url}?lat=${Cookies.get("latitude")}&lon=${Cookies.get("longitude")}&appid=${api}&units=metric`);
+    const responseJSON = await response.json();
+
+    background(responseJSON);
   }
 
-  function background() {
-    var section = document.getElementsByTagName("BODY")[0]
+  function background(weatherData) {
+    var day = document.querySelector('.day');
+    var night = document.querySelector('.night');
+
     if (weatherData) {
       if (weatherData.weather[0].icon.endsWith("n")) {
-
-        section.style.backgroundColor = '#303030'
-
+        gsap.to(night, {opacity: 1, duration: 0.5});
       } else {
-
-        section.style.background = "linear-gradient(45deg, #2c3c52, #091101)"
+        gsap.to(day, {opacity: 1, duration: 0.5});
       }
     }
   }
-
-  // dayOrNight()

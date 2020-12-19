@@ -166,3 +166,5 @@ function changeLocation() {
     Cookies.remove("defaultMosque")
     location.reload();
 }
+
+dayOrNight();
