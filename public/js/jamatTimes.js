@@ -65,7 +65,7 @@ function fillJamatTimes(times) {
 }
 
 function fillJamatTimesDesktop(times) {
-    document.querySelector('#defaultmosque').style.display = 'none';
+
 
     let m1title = document.querySelector('#mosque-1-title');
     let m2title = document.querySelector('#mosque-2-title');

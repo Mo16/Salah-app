@@ -63,7 +63,7 @@ async function getCity(longitude, latitude) {
 
     let data = await response.json();
     let city = await validateCity(data);
-    
+
     Cookies.set("city", city, {expires: 9999, samesite: 'lax'});
     document.querySelector('.location p').innerHTML = Cookies.get("city")
     loadJamatTimes(city);
@@ -81,17 +81,13 @@ async function validateCity(data, cities) {
     Object.values(mosqueDataJson).map((mosque) => {
         mosqueCities.push(mosque.city);
     }).join('');
-
-    if (mosqueCities.includes(data.adminareas.admin6.name)) {
+    if (mosqueCities.includes((data.adminareas.admin6.name).toLowerCase())) {
         city = data.adminareas.admin6.name;
     } else {
         city = data.city;
     }
-
     return city.toLowerCase();
 }
-
-
 
 function postCodeCheck (toCheck) {
     var alpha1 = "[abcdefghijklmnoprstuwyz]";                       // Character 1

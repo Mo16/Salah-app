@@ -134,12 +134,16 @@ window.addEventListener('resize' , e => {
             document.querySelector('body *').display = "none";
             document.querySelector('.portrait-mode').display = "block";
         } else {
+
             document.querySelector('.portrait-mode').display = "none";
             button.style.display = "block";
+            
         }
     } else {
+
         document.querySelector('.portrait-mode').display = "none";
         button.style.display = "none";
+
     }
 });
 
@@ -183,4 +187,11 @@ if (document.cookie) {
 } else {
     document.querySelector('section').style.display="none";
     document.querySelector('.main').style.display="block";
+}
+
+var is_mobile = !!navigator.userAgent.match(/iphone|android|blackberry/ig) || false;
+if (is_mobile){
+    document.querySelector('#defaultmosque').style.display = 'block';
+}else{
+    document.querySelector('#defaultmosque').style.display = 'none';
 }
