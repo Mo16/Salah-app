@@ -86,6 +86,8 @@ async function validateCity(data, cities) {
     } else {
         city = data.city;
     }
+    
+
     return city.toLowerCase();
 }
 

@@ -4,7 +4,34 @@ async function loadJamatTimes(city) {
 
     fillDropdown(data, city);
     showDefaultMosque(data);
+    checkMosques(data,city)
 }
+
+function checkMosques(data,city){
+    let cities = [];
+
+    Object.values(data).map((mosque) =>{
+        cities.push(mosque.city)
+    }).join("")
+    if (!cities.includes((Cookies.get("city")).toLowerCase()) || !cities.includes(city) ) {
+        console.log("has No mosques")
+        document.querySelector('#defaultmosque').innerHTML = "Add a mosque to your location"
+        document.querySelector('#defaultmosque').onclick = addLocation
+    } else {
+        console.log("has mosqeus")
+        document.querySelector('#defaultmosque').innerHTML = "Use as Default Mosque"
+
+        
+    }
+
+
+}
+
+
+function addLocation(){
+    alert("We will fix once we have a route lol")
+}
+
 
 function fillDropdown(data, city) {
     var dropdown = document.getElementById('mosque-dropdown');
@@ -106,6 +133,7 @@ function fillJamatTimesDesktop(times) {
         for (const value in mosque) {
             if (mosque.city === Cookies.get("city")) {
                 mosqueNames.push(mosque.dropdownid, mosque.fajr, mosque.zuhr, mosque.asr, mosque.maghrib, mosque.esha);
+            
             }
         }
     }).join("");
