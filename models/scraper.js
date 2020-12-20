@@ -26,7 +26,7 @@ var scrapeit = async function scrapeSite() {
   for (let i = 0; i < mosqueList.length; i++) {
     try{
       url = mosqueList[i];
-      let browser = await puppeteer.launch({headless: true, args: ['--no-sandbox','--disable-setuid-sandbox'] });;
+      let browser = await puppeteer.launch({headless: true, args: ['--no-sandbox','--disable-setuid-sandbox'] });
       const page = await browser.newPage();
       await page.goto(url);
       switch (url) {
