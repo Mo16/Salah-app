@@ -106,7 +106,7 @@ async function didsburymosque(page) {
       let maghrib = document.querySelector("body > section.main-section > div.container > div > div > div.col-md-4.col-xs-12.col-sm-12.nopadding.pTimes > div > div > table > tbody > tr:nth-child(7) > td.jamah").innerHTML;
       let esha = document.querySelector("body > section.main-section > div.container > div > div > div.col-md-4.col-xs-12.col-sm-12.nopadding.pTimes > div > div > table > tbody > tr:nth-child(8) > td.jamah").innerHTML;
       return {
-        city: "greater manchester",
+        city: "manchester",
         value: "didsburymosqueData",
         dropdownid: "Didsbury Mosque",
         name: "didsburymosque",
@@ -134,7 +134,7 @@ async function masjidnoor(page) {
     let maghrib = document.querySelector("#cycle-slideshow > div > table > tbody > tr:nth-child(13) > td:nth-child(3)").innerText;
     let esha = document.querySelector("#cycle-slideshow > div > table > tbody > tr:nth-child(15) > td:nth-child(3)").innerText;
     return {
-      city: "greater manchester",
+      city: "manchester",
       value: "masjidnoorData",
       dropdownid: "Masjid e Noor",
       name: "masjidnoor",
@@ -159,7 +159,7 @@ async function masjidhidaya(page) {
     let maghrib = document.querySelector("#schedule-today > table > tbody > tr:nth-child(6) > td:nth-child(3)").innerText;
     let esha = document.querySelector("#schedule-today > table > tbody > tr:nth-child(7) > td:nth-child(3)").innerText;
     return {
-      city: "greater manchester",
+      city: "manchester",
       value: "masjidhidayaData",
       name: "masjidhidaya",
       dropdownid: "Masjid E Hidaya",

@@ -56,8 +56,8 @@ body {
 
 .day {
     background: linear-gradient(45deg, #93BEDF, #456990);
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     position: absolute;
     z-index: -1;
     opacity: 0;
@@ -65,8 +65,8 @@ body {
 
 .night {
     background: linear-gradient(45deg, #0E131F, #003249);
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     position: absolute;
     z-index: -1;
     opacity: 0;

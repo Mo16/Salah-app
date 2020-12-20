@@ -1,6 +1,6 @@
 {
   "jamimosqueData": {
-    "city": "Portsmouth",
+    "city": "portsmouth",
     "value": "jamimosqueData",
     "dropdownid": "Portsmouth Jami Mosque",
     "name": "jamimosque",
@@ -9,11 +9,11 @@
     "fajr": "07:00",
     "zuhr": "01:00",
     "asr": "02:30",
-    "maghrib": "04:03",
+    "maghrib": "04:04",
     "esha": "07:00"
   },
   "portsmouthcentralmosqueData": {
-    "city": "Portsmouth",
+    "city": "portsmouth",
     "value": "portsmouthcentralmosqueData",
     "dropdownid": "Portsmouth Central Mosque",
     "name": "portsmouthcentralmosque",
@@ -26,7 +26,7 @@
     "esha": "7:15 PM"
   },
   "didsburymosqueData": {
-    "city": "Greater Manchester",
+    "city": "manchester",
     "value": "didsburymosqueData",
     "dropdownid": "Didsbury Mosque",
     "name": "didsburymosque",
@@ -35,11 +35,11 @@
     "fajr": "7:15 am",
     "zuhr": "12:30 pm",
     "asr": "2:15 pm",
-    "maghrib": "3:51 pm",
+    "maghrib": "3:52 pm",
     "esha": "7:30 pm"
   },
   "masjidhidayaData": {
-    "city": "Greater Manchester",
+    "city": "manchester",
     "value": "masjidhidayaData",
     "name": "masjidhidaya",
     "dropdownid": "Masjid E Hidaya",
@@ -48,11 +48,11 @@
     "fajr": "7:30",
     "zuhr": "12:45",
     "asr": "3:00",
-    "maghrib": "3:53",
+    "maghrib": "3:54",
     "esha": "6:00"
   },
   "masjidnoorData": {
-    "city": "Greater Manchester",
+    "city": "manchester",
     "value": "masjidnoorData",
     "dropdownid": "Masjid e Noor",
     "name": "masjidnoor",
@@ -65,20 +65,20 @@
     "esha": "06:00"
   },
   "eastlondonmosqueData": {
-    "city": "London",
+    "city": "london",
     "value": "eastlondonmosqueData",
     "dropdownid": "East London Mosque",
     "name": "eastlondonmosque",
     "longitude": -0.0676762,
     "latitude": 51.5175695,
-    "fajr": "06:49",
+    "fajr": "06:50",
     "zuhr": "12:45",
     "asr": "02:30",
     "maghrib": "04:03",
     "esha": "07:30"
   },
   "finsburyparkmosqueData": {
-    "city": "London",
+    "city": "london",
     "value": "finsburyparkmosqueData",
     "dropdownid": "Finsbury Park Mosque",
     "name": "finsburyparkmosque",
@@ -91,7 +91,7 @@
     "esha": "18:30"
   },
   "glasgowCentralData": {
-    "city": "Glasgow",
+    "city": "glasgow",
     "value": "glasgowCentralData",
     "dropdownid": "Glasgow Central Mosque",
     "name": "glasgowCentral",
@@ -100,7 +100,7 @@
     "fajr": "7:00am",
     "zuhr": "1:00pm",
     "asr": "2:10pm",
-    "maghrib": "3:53pm",
+    "maghrib": "3:54pm",
     "esha": "8:00pm"
   }
 }

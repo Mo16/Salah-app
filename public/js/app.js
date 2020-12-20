@@ -167,4 +167,20 @@ function changeLocation() {
     location.reload();
 }
 
-dayOrNight();
+if (document.cookie) {
+    loadShow();
+    document.querySelector('section').style.display="block";
+    document.querySelector('.location').scrollIntoView();
+    document.querySelector('.main').style.display="none";
+    document.querySelector('main').style.height="auto";
+    document.querySelector('.location p').innerHTML = Cookies.get("city")
+
+    //getCity(parseFloat(Cookies.get("longitude")), parseFloat(Cookies.get("latitude")));
+    getBeginningTimes(Cookies.get("longitude"), Cookies.get("latitude")); 
+    loadJamatTimes(Cookies.get("city"));
+    dayOrNight();
+    loadHide();
+} else {
+    document.querySelector('section').style.display="none";
+    document.querySelector('.main').style.display="block";
+}

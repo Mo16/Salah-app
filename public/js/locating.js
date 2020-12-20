@@ -39,12 +39,14 @@ function postCodeLocate(postcode){
             getCity(longitude,latitude)
             getBeginningTimes(longitude,latitude)
         } else if (PCResponse.status === 404) {
+            loadHide();
             setTimeout(() => {
                 window.scrollTo(0,0,);
             }, 2);
             makeAlert("Please enter a valid postcode.", true);
 
         } else {
+            loadHide();
             makeAlert("There was an error getting the postcode location. Please try again later.", false);
             setTimeout(() => {
                 window.scrollTo(0,0,);
@@ -57,16 +59,15 @@ function postCodeLocate(postcode){
 
 async function getCity(longitude, latitude) {
     const response = await fetch(`https://geocode.xyz/${latitude},${longitude}?json=1&auth=518769519549893434x61430`);
-    let data = await response.json();
+    console.log(longitude, latitude);
 
-    console.log(data);
-    
+    let data = await response.json();
     let city = await validateCity(data);
     
-    console.log(city);
     Cookies.set("city", city, {expires: 9999, samesite: 'lax'});
     document.querySelector('.location p').innerHTML = Cookies.get("city")
     loadJamatTimes(city);
+    dayOrNight();
     loadHide();
 }
 
@@ -81,15 +82,11 @@ async function validateCity(data, cities) {
         mosqueCities.push(mosque.city);
     }).join('');
 
-    console.log(mosqueCities);
-
     if (mosqueCities.includes(data.adminareas.admin6.name)) {
         city = data.adminareas.admin6.name;
     } else {
         city = data.city;
     }
-
-    console.log(city);
 
     return city.toLowerCase();
 }
@@ -127,25 +124,6 @@ function postCodeCheck (toCheck) {
       }
     }
     if (valid) {return postCode} else return false;
-}
-
-
-
-if (document.cookie) {
-    loadShow();
-    document.querySelector('section').style.display="block";
-    document.querySelector('.location').scrollIntoView();
-    document.querySelector('.main').style.display="none";
-    document.querySelector('main').style.height="auto";
-    document.querySelector('.location p').innerHTML = Cookies.get("city")
-
-    getCity(Cookies.get("latitude"), Cookies.get("longitude"));
-    getBeginningTimes(); 
-    loadJamatTimes(Cookies.get("city"));
-    loadHide();
-} else {
-    document.querySelector('section').style.display="none";
-    document.querySelector('.main').style.display="block";
 }
 
 function showError(error) {

@@ -1,9 +1,9 @@
 async function loadJamatTimes(city) {
     const response = await fetch("data/mosqueData.json");
     const data = await response.json();
-    fillDropdown(data, city)
-    showDefaultMosque(data)
 
+    fillDropdown(data, city);
+    showDefaultMosque(data);
 }
 
 function fillDropdown(data, city) {
@@ -12,6 +12,10 @@ function fillDropdown(data, city) {
         if(mosque.city === Cookies.get("city") || mosque.city === city) {
             return `<option value="${mosque.value}">${mosque.dropdownid}</option>`;
         }
+        // console.log('city passed into function: '+ city);
+        // console.log('city from cookie: '+ Cookies.get('city'));
+        // console.log('mosque city: '+ mosque.city);
+
     }).join("");
     getTimesForMosque();
     fillJamatTimesDesktop(data);
@@ -52,9 +56,6 @@ async function showDefaultMosque(data){
 }
 
   
-
-
-
 function fillJamatTimes(times) {
     document.querySelector('.j-fajr').innerHTML = times.fajr;
     document.querySelector('.j-zuhr').innerHTML = times.zuhr;
