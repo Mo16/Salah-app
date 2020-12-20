@@ -189,9 +189,3 @@ if (document.cookie) {
     document.querySelector('.main').style.display="block";
 }
 
-var is_mobile = !!navigator.userAgent.match(/iphone|android|blackberry/ig) || false;
-if (is_mobile){
-    document.querySelector('#defaultmosque').style.display = 'block';
-}else{
-    document.querySelector('#defaultmosque').style.display = 'none';
-}
