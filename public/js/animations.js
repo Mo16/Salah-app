@@ -3,6 +3,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.from('#mh1', {duration: 1, y:-50, opacity:0, delay: 0.25, ease: "expo.out"});
 gsap.from('#mp', {duration: 0.5, opacity: 0, delay: 0.5});
 gsap.from('#learnbtn', {duration: 1, opacity: 0, delay: 1, ease: 'power1.out'});
+gsap.from('.or-enter-manually', {duration: 1, opacity: 0, delay: 1.3, ease: 'power1.out'});
 
 
 var learnbtn = document.querySelector('#learnbtn');
