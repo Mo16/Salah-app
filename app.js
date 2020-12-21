@@ -10,7 +10,9 @@ app.get("/", function (req, res) {
   res.render("index.ejs");
 });
 
-app.route("/support")
+app.get("/support", (req, res) => {
+  res.render("support.ejs");
+})
 
 
 app.listen(process.env.PORT || 3000, function () {});

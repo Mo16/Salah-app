@@ -1,0 +1,15 @@
+.support-main {
+    background-color: white;
+    position: absolute;
+    top: 8em;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.support-main h2 {
+    font-size: 2.4em;
+    padding: 1em;
+}
