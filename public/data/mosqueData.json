@@ -9,7 +9,7 @@
     "fajr": "07:00",
     "zuhr": "01:00",
     "asr": "02:30",
-    "maghrib": "04:04",
+    "maghrib": "04:05",
     "esha": "07:00"
   },
   "portsmouthcentralmosqueData": {
@@ -34,8 +34,8 @@
     "latitude": 53.4227222,
     "fajr": "7:15 am",
     "zuhr": "12:30 pm",
-    "asr": "2:15 pm",
-    "maghrib": "3:52 pm",
+    "asr": "2:00 pm",
+    "maghrib": "3:53 pm",
     "esha": "7:30 pm"
   },
   "masjidhidayaData": {
@@ -48,7 +48,7 @@
     "fajr": "7:30",
     "zuhr": "12:45",
     "asr": "3:00",
-    "maghrib": "3:54",
+    "maghrib": "3:55",
     "esha": "6:00"
   },
   "masjidnoorData": {

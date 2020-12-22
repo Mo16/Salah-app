@@ -1,7 +1,12 @@
+nav {
+    background-color: var(--secondary);
+    padding-bottom: 4em;
+}
+
 .support-main {
     background-color: white;
     position: absolute;
-    top: 8em;
+    top: 7.6em;
     width: 100%;
     height: auto;
     padding: 0;
@@ -12,4 +17,36 @@
 .support-main h2 {
     font-size: 2.4em;
     padding: 1em;
+    margin-top: 1em;
+}
+
+.support-main h3 {
+    font-size: 1.9em;
+    padding: 0 1em;
+}
+
+.support-main ul {
+    padding: 1em;
+    font-size: 21px;
+}
+
+.troubleshooting-steps {
+    padding: 1em;
+    margin: 0 4em;
+}
+
+.back-home {
+    position: absolute;
+    top: 1em;
+    left: 2em;
+    padding: 0.6em;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 23px;
+    transition: 0.3s;
+}
+
+.back-home:hover {
+    background-color: var(--secondary);
 }
