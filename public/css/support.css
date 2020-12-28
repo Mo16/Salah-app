@@ -9,10 +9,11 @@ body {
     position: relative;
 }
 
+.maincontainer {
+    height: auto;
+}
+
 .support-main {
-    position: absolute;
-    top: 7.6em;
-    width: 100%;
     min-height: 80vh;
     height: auto;
     padding: 0;
@@ -43,9 +44,8 @@ body {
 }
 
 .back-home {
-    position: absolute;
-    top: -1em;
-    left: 2em;
+    float: right;
+    margin: 2em;
     padding: 0.6em;
     background-color: var(--primary);
     color: white;
