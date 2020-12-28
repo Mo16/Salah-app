@@ -79,11 +79,12 @@ function makeAlert(alertmessage, postcodeOrNot) {
     gsap.to('.alertContainer', {opacity: 1, duration: 0.3, y: 0});
 
     if (postcodeOrNot==true) {
-        document.querySelector('.postcode-entrybox').display = "block";
+        document.querySelector('.postcode-entrybox').style.display = "block";
         document.querySelector('.btnok').style.display="none";
         document.querySelector('.forPostcode').style.display="flex";
-    } else {
-        document.querySelector('.btnok').style.display="flex";
+    } else if (postcodeOrNot==false){
+        document.querySelector('.postcode-entrybox').style.display = "none";
+        document.querySelector('.notForPostcode').style.display="flex";
         document.querySelector('.forPostcode').style.display="none";
     }
 }
@@ -171,7 +172,7 @@ function changeLocation() {
     location.reload();
 }
 
-if (document.cookie) {
+if (Cookies.get('latitude') && Cookies.get('longitude') && Cookies.get('city')) {
     loadShow();
     document.querySelector('section').style.display="block";
     document.querySelector('.location').scrollIntoView();

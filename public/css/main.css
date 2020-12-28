@@ -464,8 +464,8 @@ canvas {
     box-shadow: 4px 3px 25px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid #b4b4b4;
     border-right: 1px solid #b4b4b4;
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 .start-times-title {
@@ -657,6 +657,10 @@ footer {
 
 footer p {
     padding: 1em;
+}
+
+.dark-mode {
+    display: none;
 }
 
 @keyframes bounceDown {
@@ -872,5 +876,25 @@ footer p {
 
     .mosque-number-title {
         display: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary: #2da37a;
+        --secondary: #0f5a40;
+        --complementary: #963b27;
+        --complementary-dark: #4b1001;
+    }
+
+    .start-times-container {
+        background:rgba(0, 0, 0, 0.5);
+        border: none;
+        color: white;
+    }
+
+    footer {
+        background:rgba(0, 0, 0, 0.5);
+        color: white;
     }
 }

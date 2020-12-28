@@ -22,44 +22,41 @@ function savePosition(position) {
     getCity(longitude, latitude);
 }
 
-function postCodeLocate(postcode){
+async function postCodeLocate(postcode){
     loadShow()
-    fetch(`https://api.postcodes.io/postcodes/${postcode}`)
-    .then((response) => {
-      return response.json();
-    }).then((data) => {
-        if (data.status == 200){
-            longitude = data.result.longitude
-            latitude = data.result.latitude
-            document.querySelector('section').style.display="block";
-            document.querySelector('.main').style.display="none";
-            Cookies.set("longitude",longitude,{expires: 9999})
-            Cookies.set("latitude",latitude,{expires: 9999})
-            document.querySelector('main').style.height="auto";
-            getCity(longitude,latitude)
-            getBeginningTimes(longitude,latitude)
-        } else if (PCResponse.status === 404) {
-            loadHide();
-            setTimeout(() => {
-                window.scrollTo(0,0,);
-            }, 2);
-            makeAlert("Please enter a valid postcode.", true);
+    let cityData = await fetch(`https://api.postcodes.io/postcodes/${postcode}`);
+    let data = await cityData.json();
 
-        } else {
-            loadHide();
-            makeAlert("There was an error getting the postcode location. Please try again later.", false);
-            setTimeout(() => {
-                window.scrollTo(0,0,);
-            }, 2);
-        }
+    if (data.status == 200){
+        let longitude = data.result.longitude;
+        let latitude = data.result.latitude;
+        document.querySelector('section').style.display="block";
+        document.querySelector('.main').style.display="none";
+        Cookies.set("longitude",longitude,{expires: 9999})
+        Cookies.set("latitude",latitude,{expires: 9999})
+        document.querySelector('main').style.height="auto";
+        getCity(longitude,latitude)
+        getBeginningTimes(longitude,latitude)
+    } else if (PCResponse.status === 404) {
+        loadHide();
+        setTimeout(() => {
+            window.scrollTo(0,0,);
+        }, 2);
+        makeAlert("Please enter a valid postcode.", true);
 
-  
-    })
+    } else {
+        loadHide();
+        makeAlert("There was an error getting the postcode location. Please try again later.", false);
+        setTimeout(() => {
+            window.scrollTo(0,0,);
+        }, 2);
+    }
 }
 
+
 async function getCity(longitude, latitude) {
-    const response = await fetch(`https://geocode.xyz/${latitude},${longitude}?json=1&auth=518769519549893434x61430`);
-    console.log(longitude, latitude);
+    //const response = await fetch(`https://geocode.xyz/${latitude},${longitude}?json=1&auth=518769519549893434x61430`);
+    const response = await fetch(`https://geocode.xyz/${latitude},${longitude}?json=1`);
 
     let data = await response.json();
     let city = await validateCity(data);
@@ -81,13 +78,22 @@ async function validateCity(data, cities) {
     Object.values(mosqueDataJson).map((mosque) => {
         mosqueCities.push(mosque.city);
     }).join('');
-    if (mosqueCities.includes((data.adminareas.admin6.name).toLowerCase())) {
-        city = data.adminareas.admin6.name;
-    } else {
-        city = data.city;
+
+    try {
+         if (mosqueCities.includes((data.adminareas.admin6.name).toLowerCase())) {
+             city = data.adminareas.admin6.name;
+         } else {
+             city = data.city;
+         }
+    }
+    catch(err) {
+        loadHide();
+        document.querySelector('#learnsection div').style.display = "none";
+        setTimeout(() => {
+            makeAlert("Please try again. <br> If you repeatedly get this error, this service may currently be unavailable.", false);
+        }, 1000);
     }
     
-
     return city.toLowerCase();
 }
 
