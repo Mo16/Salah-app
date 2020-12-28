@@ -40,6 +40,7 @@ body {
     background: linear-gradient(45deg, var(--primary), #105e43);
     /* cursor: none; */
     perspective: 1400px;
+    position: relative;
 }
 
 .cursor {
@@ -477,6 +478,13 @@ canvas {
     padding-bottom: 0.3em;
 }
 
+.start-times-container img, .jamat-times-container img {
+    width: 2em;
+    height: 3em;
+    margin: auto;
+    padding: 0.3em 0;
+}
+
 .name-and-time-container-container {
     display: flex;
     justify-content: space-between;
@@ -503,7 +511,7 @@ canvas {
 }
 
 .jamat-times-container {
-    background: linear-gradient(50deg, var(--complementary), var(--complementary-dark));
+    background: linear-gradient(45deg, var(--complementary), var(--complementary-dark));
     color: white;
     padding: 1em;
     border-radius: 30px;
@@ -511,6 +519,11 @@ canvas {
     box-shadow: 4px 3px 25px rgba(0, 0, 0, 0.2);
     max-width: 100%;
     transform-style: preserve-3d;
+}
+
+.jamat-times-container img {
+    filter: invert(180);
+    display: none;
 }
 
 #defaultmosque{
@@ -639,8 +652,11 @@ canvas {
 }
 
 .mosque-number-title {
-    font-size: 1.2em;
+    font-size: 1.3em;
+    text-decoration: underline;
+    font-weight: 300;
     padding: 0.3em;
+    text-transform: uppercase;
 }
 
 footer {
@@ -648,8 +664,8 @@ footer {
     color: var(--black);
     padding: none;
     text-align: center;
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: 0px;
     width: 100%;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -695,9 +711,12 @@ footer p {
         /* cursor: auto !important; */
     }
 
-    a {
+    a, p, h1, h2, h3, li {
         /* cursor: pointer !important; */
+        user-select: none;
+        -webkit-user-select: none;
     }
+
     .cursor {
         display: none;
     }
@@ -705,6 +724,8 @@ footer p {
     .expandnav {
         z-index: 11;
         display: block;
+        user-select: none;
+        -webkit-user-select: none;
     }
 
     nav ul {
@@ -723,7 +744,9 @@ footer p {
         width: 100vw;
         height: 100vh;
         z-index: 10;
-        background-color: var(--complementary);
+        background-color: #c9563cb0;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
         margin: 0;
         padding: 0;
     }
@@ -877,6 +900,17 @@ footer p {
     .mosque-number-title {
         display: none;
     }
+
+    .jamat-times-container img {
+        display: block;
+        padding: none;
+        margin: 0 auto;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -891,6 +925,10 @@ footer p {
         background:rgba(0, 0, 0, 0.5);
         border: none;
         color: white;
+    }
+
+    .start-times-container img {
+        filter: invert(180);
     }
 
     footer {
