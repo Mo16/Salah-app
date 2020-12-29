@@ -130,6 +130,8 @@ function loadHide() {
 window.addEventListener('resize' , e => {
     button = document.querySelector("button")
     if (/Android|webOS|iPhone|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        document.getElementById("timesectionbox").style.display = "none"
+        document.getElementById("picbox").style.display = "none"
         button.style.display = "block"
         if (window.innerWidth > window.innerHeight) {
             document.querySelector('body *').display = "none";

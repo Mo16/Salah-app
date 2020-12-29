@@ -37,7 +37,7 @@ html {
 }
 
 body {
-    background: linear-gradient(45deg, var(--primary), #105e43);
+    background: linear-gradient(45deg, var(--primary), #2a6592);
     /* cursor: none; */
     perspective: 1400px;
 }
@@ -102,6 +102,70 @@ section:hover .cursor {
     width: 25px;
     height: 25px;
 }
+
+
+
+@media screen and (min-width: 768px){
+    .jamat-times-container {
+        margin-left:60%;
+    }
+    .start-times-container {
+        margin-left:60%;
+    }
+    #timesectionbox{
+
+        background: rgb(92, 45, 45);
+        color: white;
+        padding: 1em;
+        padding-bottom: 20%;
+        position: absolute;
+        border-radius: 30px;
+        margin-top: 1em;
+        box-shadow: 4px 3px 25px rgba(0, 0, 0, 0.2);
+        max-width: 35%;
+        transform-style: preserve-3d;
+    }
+
+    #infobox{
+        width: 55%;
+        height: 80%;
+        bottom: 200px;
+        margin-left: 650px;
+        margin-right: 300px;
+        background-color: #7e9a9a;
+        opacity: 0.9;
+        position: absolute;
+    
+    
+    }
+    
+    #infotext{
+        padding-left: 24%;
+    }
+    
+    #picbox{
+    
+        width: 40%;
+        height: 80%;
+        bottom: 00px;
+        margin-left: 200px;
+        margin-right: 700px;
+        background-color: #b38e58;
+        opacity: 0.9;
+        position: absolute;
+    
+    }
+    
+    #picboxtext{
+        margin-top: 20%;
+        
+        font-size: 12px;
+    }
+
+
+}
+
+
 
 .loadicon {
     height: 100vh;
@@ -458,6 +522,7 @@ canvas {
 }
 
 .start-times-container {
+    max-width: 35%;
     background-color: rgba(244, 242, 243, 0.7);
     padding: 1em;
     border-radius: 30px;
@@ -494,22 +559,21 @@ canvas {
     padding: 1em;
 }
 
-.fajr {
-    border-left: none;
-}
 
-.isha {
-    border-right: none;
-}
 
 .jamat-times-container {
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     background: linear-gradient(50deg, var(--complementary), var(--complementary-dark));
     color: white;
     padding: 1em;
+
     border-radius: 30px;
     margin-top: 1em;
     box-shadow: 4px 3px 25px rgba(0, 0, 0, 0.2);
-    max-width: 100%;
+    max-width: 35%;
     transform-style: preserve-3d;
 }
 

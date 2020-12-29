@@ -1,7 +1,7 @@
 async function loadJamatTimes(city) {
     const response = await fetch("data/mosqueData.json");
     const data = await response.json();
-
+    animateJamatAndStartBoxes()
     fillDropdown(data, city);
     showDefaultMosque(data);
     checkMosques(data,city)

@@ -1,12 +1,29 @@
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.from('#mh1', {duration: 1, y:-50, opacity:0, delay: 0.25, ease: "expo.out"});
+gsap.from('#mh1', {duration: 2, y:-50, opacity:0, delay: 0.5, ease: "expo.out"});
+gsap.from('#infobox', {duration: 2, y:-50, opacity:0, delay: 0.5, ease: "expo.out"});
+gsap.from('#picbox', {duration: 2, y:50, opacity:0, delay: 0.5, ease: "expo.out"});
 gsap.from('#mp', {duration: 0.5, opacity: 0, delay: 0.5});
 gsap.from('#learnbtn', {duration: 1, opacity: 0, delay: 1, ease: 'power1.out'});
 gsap.from('.or-enter-manually', {duration: 1, opacity: 0, delay: 1.3, ease: 'power1.out'});
 
 
 var learnbtn = document.querySelector('#learnbtn');
+
+function hideBoxes(){
+  gsap.from('#mh1', {duration: 1, y:50, opacity:0, delay: 0.25, ease: "expo.in"});
+  gsap.from('#infobox', {duration: 1, y:50, opacity:0, delay: 0.25, ease: "expo.in"});
+  gsap.from('#picbox', {duration: 1, y:-50, opacity:0, delay: 0.25, ease: "expo.in"});
+}
+
+
+function animateJamatAndStartBoxes(delayTime){
+  gsap.from('.start-times-container', {duration: 1, y:-50, opacity:0, delay: delayTime, ease: "expo.in"});
+  gsap.from('#timesectionbox', {duration: 1, x:50, opacity:0, delay: delayTime, ease: "expo.in"});
+  gsap.from('.jamat-times-container', {duration: 1, y:50, opacity:0, delay: delayTime, ease: "expo.in"});
+
+}
+animateJamatAndStartBoxes(0.5)
 
 function parallaxIt(e, target, movement = 1) {
   var boundingRect = learnbtn.getBoundingClientRect();

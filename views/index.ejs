@@ -31,6 +31,7 @@
             <div class="alertMessage">
                 Geolocation not supported.
             </div>
+       
             <div class="postcode-entrybox-container">
                 <div class="postcode-entrybox">
                     <input type="text" name="postcode-box" class="postcode-box" id="postcode-box" required/>
@@ -39,6 +40,7 @@
                     </label>
                 </div>
             </div>
+            
             <a class="btnok notForPostcode" href="#" onclick="hideAlert(false)">
                 <span class="material-icons">check</span>
                 Okay
@@ -50,6 +52,7 @@
             <p class="postcode-error">Please enter a valid UK postcode.</p>
         </div>
     </div>
+
     <main class="maincontainer">
         <nav>
             <p class="brand">Salah Times</p>
@@ -59,9 +62,12 @@
                 <li><a  class="navlink" href="/support">Support</a></li>
             </ul>
             <div class="expandnav" onclick="navOpen()">
+            
                 <span class="material-icons" id="hamburgericon">drag_handle</span>
             </div>
+            
         </nav>
+        
         <div class="navphone">
             <ul class="navlistPhone">
                 <li><a href="#" onclick="navClose()">Home</a></li>
@@ -70,23 +76,49 @@
             </ul>
         </div>
         <div class="main">
-            <h1 id="mh1">Salah times simplified.</h1>
-            <p id="mp">Get prayer times local to you, including congregational times from nearby mosques.</p>
-            <div id="learnbtn">
-                <a href="#learnsection" class="learnmore" onclick="getLocation()">
-                    <span class="material-icons">location_on</span>Find location
-                </a>
+            
+            <div id="infobox">
+            <div id="infotext">
+                <br><br><br><br><br>
+                <h1 id="mh1">Salah times simplified.</h1>
+                <p id="mp">Get prayer times local to you, including congregational times from nearby mosques.</p>
+
+                <div id="learnbtn">
+                    <a href="#learnsection" class="learnmore" onclick="getLocation()">
+                        <span class="material-icons">location_on</span>Find location
+                    </a>
+                </div>
+
+                <div class="or-enter-manually" onclick="hideBoxes()">
+                    <p><a href="#">Or enter manually</a></p>
+                </div>
             </div>
-            <div class="or-enter-manually" onclick="postcodeShow()">
-                <p><a href="#">Or enter manually</a></p>
+
             </div>
+
+            <div id="picbox">
+                <div id="picboxtext">
+
+                    <h1>Hadith of the day</h1>
+                    <p>Leave that which puts you in doubt for that which does not</p>
+                </div>
+            </div>
+
+
         </div>
     </main>
+    
     <canvas id="floaters"></canvas>
     <section id="learnsection">
+
         <section class="location">
             <span class="material-icons">location_on</span><p>Location</p>
         </section>
+
+    <div id="timesectionbox">
+       
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati eum incidunt quasi neque aperiam a eligendi nulla autem. Eos pariatur quos quod magnam dolore! Totam repellat amet, fugiat suscipit quos debitis sint pariatur exercitationem, rerum dolorem quis? Enim, consectetur dolorum!
+    </div>
         <div class="times-container">
         <div class="start-times-container">
             <h4 class="start-times-title">start times</h4>
@@ -114,20 +146,12 @@
             </div>
         </div>
 
+
+
         <div class="jamat-times-container">
             <h4 class="jamat-times-title">Jamat Times:</h4>
             <div class="mosque-select-container">
                 <div class="dropdown-container">
-                    <!-- <div class="dropdown-bar" onclick="mosqueDropdown()">
-                        <p class="mosque-name-on-bar">Select Mosque:</p>
-                        <span class="material-icons" onclick="mosqueDropdown()">play_arrow</span>
-                    </div>
-                    <div class="mosques-dropdown-menu">
-                        <a onclick="mosqueDropdown(), changeDropdownBarText(this)">Jamiah Mosque</a>
-                        <a onclick="mosqueDropdown(), changeDropdownBarText(this)">Masjide Noor</a>
-                        <a class="last-dropdown" onclick="mosqueDropdown(), changeDropdownBarText(this)">Masjid e Hidayah</a>
-                    </div> -->
-
                     <select onchange="getTimesForMosque()" id="mosque-dropdown">
                         <option disabled="disabled" selected="selected">Select Mosque</option>
                     </select>
