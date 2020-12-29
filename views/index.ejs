@@ -91,163 +91,172 @@
             <span class="material-icons">location_on</span><p>Location</p>
         </section>
         <div class="times-container">
-        <div class="start-times-container">
-            <h4 class="start-times-title">start times</h4>
-            <div class="name-and-time-container-container">
-                <div class="name-and-time-container fajr">
-                    <img src="assets/sunrise.svg" alt="fajr-icon">
-                    <p class="time-name">Fajr:</p>
-                    <p class="fajr time" id="fajrbegin">05:00</p>
-                </div>
-                <div class="name-and-time-container">
-                    <img src="assets/sun.svg" alt="zuhr-icon">
-                    <p class="time-name">Zuhr:</p>
-                    <p class="zuhr time" id="zuhrbegin">05:00</p>
-                </div>
-                <div class="name-and-time-container">
-                    <img src="assets/cloud.svg" alt="asr-icon">
-                    <p class="time-name">Asr:</p>
-                    <p class="asr time" id="asrbegin">05:00</p>
-                </div>
-                <div class="name-and-time-container">
-                    <img src="assets/sunset.svg" alt="maghrib-icon">
-                    <p class="time-name">Maghrib:</p>
-                    <p class="maghrib time" id="maghribbegin">05:00</p>
-                </div>
-                <div class="name-and-time-container isha">
-                    <img src="assets/moon.svg" alt="isha-icon">
-                    <p class="time-name">Isha:</p>
-                    <p class="isha time" id="ishabegin">05:00</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="jamat-times-container">
-            <h4 class="jamat-times-title">Jamat Times:</h4>
-            <div class="mosque-select-container">
-                <div class="dropdown-container">
-                    <!-- <div class="dropdown-bar" onclick="mosqueDropdown()">
-                        <p class="mosque-name-on-bar">Select Mosque:</p>
-                        <span class="material-icons" onclick="mosqueDropdown()">play_arrow</span>
+            <div class="start-times-container">
+                <h4 class="start-times-title">start times</h4>
+                <div class="name-and-time-container-container">
+                    <div class="name-and-time-container fajr">
+                        <img src="assets/sunrise.svg" alt="fajr-icon">
+                        <p class="time-name">Fajr:</p>
+                        <p class="fajr time" id="fajrbegin">05:00</p>
                     </div>
-                    <div class="mosques-dropdown-menu">
-                        <a onclick="mosqueDropdown(), changeDropdownBarText(this)">Jamiah Mosque</a>
-                        <a onclick="mosqueDropdown(), changeDropdownBarText(this)">Masjide Noor</a>
-                        <a class="last-dropdown" onclick="mosqueDropdown(), changeDropdownBarText(this)">Masjid e Hidayah</a>
-                    </div> -->
-
-                    <select onchange="getTimesForMosque()" id="mosque-dropdown">
-                        <option disabled="disabled" selected="selected">Select Mosque</option>
-                    </select>
-                </div>
-            </div>
-            <h5 class="mosque-number-title" id="mosque-1-title">Mosque 1:</h5>
-            <div class="jamat-name-and-time-container-container mosque-1">
-                <div class="jamat-name-and-time-container jamat-fajr">
-                    <img src="assets/sunrise.svg" alt="fajr-icon">
-                    <p class="time-name">Fajr:</p>
-                    <p class="j-fajr time">05:00</p>
-                </div>
-                <div class="jamat-name-and-time-container">
-                    <img src="assets/sun.svg" alt="zuhr-icon">
-                    <p class="time-name">Zuhr:</p>
-                    <p class="j-zuhr time">05:00</p>
-                </div>
-                <div class="jamat-name-and-time-container">
-                    <img src="assets/cloud.svg" alt="asr-icon">
-                    <p class="time-name">Asr:</p>
-                    <p class="j-asr time">05:00</p>
-                </div>
-                <div class="jamat-name-and-time-container">
-                    <img src="assets/sunset.svg" alt="maghrib-icon">
-                    <p class="time-name">Maghrib:</p>
-                    <p class="j-maghrib time">05:00</p>
-                </div>
-                <div class="jamat-name-and-time-container jamat-isha">
-                    <img src="assets/moon.svg" alt="isha-icon">
-                    <p class="time-name">Isha:</p>
-                    <p class="j-isha time">05:00</p>
+                    <div class="name-and-time-container">
+                        <img src="assets/sun.svg" alt="zuhr-icon">
+                        <p class="time-name">Zuhr:</p>
+                        <p class="zuhr time" id="zuhrbegin">05:00</p>
+                    </div>
+                    <div class="name-and-time-container">
+                        <img src="assets/cloud.svg" alt="asr-icon">
+                        <p class="time-name">Asr:</p>
+                        <p class="asr time" id="asrbegin">05:00</p>
+                    </div>
+                    <div class="name-and-time-container">
+                        <img src="assets/sunset.svg" alt="maghrib-icon">
+                        <p class="time-name">Maghrib:</p>
+                        <p class="maghrib time" id="maghribbegin">05:00</p>
+                    </div>
+                    <div class="name-and-time-container isha">
+                        <img src="assets/moon.svg" alt="isha-icon">
+                        <p class="time-name">Isha:</p>
+                        <p class="isha time" id="ishabegin">05:00</p>
+                    </div>
                 </div>
             </div>
 
-            <h5 class="mosque-number-title" id="mosque-2-title">Mosque 2:</h5>
-            <div class="jamat-name-and-time-container-container mosque-2">
-                <div class="jamat-name-and-time-container jamat-fajr">
-                    <p class="time-name">Fajr:</p>
-                    <p class="fajr time">05:00</p>
-                </div>
-                <div class="jamat-name-and-time-container">
-                    <p class="time-name">Zuhr:</p>
-                    <p class="zuhr time">05:00</p>
-                </div>
-                <div class="jamat-name-and-time-container">
-                    <p class="time-name">Asr:</p>
-                    <p class="asr time">05:00</p>
-                </div>
-                <div class="jamat-name-and-time-container">
-                    <p class="time-name">Maghrib:</p>
-                    <p class="maghrib time">05:00</p>
-                </div>
-                <div class="jamat-name-and-time-container jamat-isha">
-                    <p class="time-name">Isha:</p>
-                    <p class="isha time">05:00</p>
-                </div>
-            </div>
+            <div class="jamat-times-container">
+                <h4 class="jamat-times-title">Jamat Times:</h4>
+                <div class="mosque-select-container">
+                    <div class="dropdown-container">
+                        <!-- <div class="dropdown-bar" onclick="mosqueDropdown()">
+                            <p class="mosque-name-on-bar">Select Mosque:</p>
+                            <span class="material-icons" onclick="mosqueDropdown()">play_arrow</span>
+                        </div>
+                        <div class="mosques-dropdown-menu">
+                            <a onclick="mosqueDropdown(), changeDropdownBarText(this)">Jamiah Mosque</a>
+                            <a onclick="mosqueDropdown(), changeDropdownBarText(this)">Masjide Noor</a>
+                            <a class="last-dropdown" onclick="mosqueDropdown(), changeDropdownBarText(this)">Masjid e Hidayah</a>
+                        </div> -->
 
-            <h5 class="mosque-number-title" id="mosque-3-title">Mosque 3:</h5>
-            <div class="jamat-name-and-time-container-container mosque-3">
-                <div class="jamat-name-and-time-container jamat-fajr">
-                    <p class="time-name">Fajr:</p>
-                    <p class="fajr time">05:00</p>
+                        <select onchange="getTimesForMosque()" id="mosque-dropdown">
+                            <option disabled="disabled" selected="selected">Select Mosque</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="jamat-name-and-time-container">
-                    <p class="time-name">Zuhr:</p>
-                    <p class="zuhr time">05:00</p>
+                <h5 class="mosque-number-title" id="mosque-1-title">Mosque 1:</h5>
+                <div class="jamat-name-and-time-container-container mosque-1">
+                    <div class="jamat-name-and-time-container jamat-fajr">
+                        <img src="assets/sunrise.svg" alt="fajr-icon">
+                        <p class="time-name">Fajr:</p>
+                        <p class="j-fajr time">05:00</p>
+                    </div>
+                    <div class="jamat-name-and-time-container">
+                        <img src="assets/sun.svg" alt="zuhr-icon">
+                        <p class="time-name">Zuhr:</p>
+                        <p class="j-zuhr time">05:00</p>
+                    </div>
+                    <div class="jamat-name-and-time-container">
+                        <img src="assets/cloud.svg" alt="asr-icon">
+                        <p class="time-name">Asr:</p>
+                        <p class="j-asr time">05:00</p>
+                    </div>
+                    <div class="jamat-name-and-time-container">
+                        <img src="assets/sunset.svg" alt="maghrib-icon">
+                        <p class="time-name">Maghrib:</p>
+                        <p class="j-maghrib time">05:00</p>
+                    </div>
+                    <div class="jamat-name-and-time-container jamat-isha">
+                        <img src="assets/moon.svg" alt="isha-icon">
+                        <p class="time-name">Isha:</p>
+                        <p class="j-isha time">05:00</p>
+                    </div>
                 </div>
-                <div class="jamat-name-and-time-container">
-                    <p class="time-name">Asr:</p>
-                    <p class="asr time">05:00</p>
-                </div>
-                <div class="jamat-name-and-time-container">
-                    <p class="time-name">Maghrib:</p>
-                    <p class="maghrib time">05:00</p>
-                </div>
-                <div class="jamat-name-and-time-container jamat-isha">
-                    <p class="time-name">Isha:</p>
-                    <p class="isha time">05:00</p>
-                </div>
-            </div>
 
-            <h5 class="mosque-number-title" id="mosque-4-title">Mosque 4:</h5>
-            <div class="jamat-name-and-time-container-container mosque-4">
-                <div class="jamat-name-and-time-container jamat-fajr">
-                    <p class="time-name">Fajr:</p>
-                    <p class="fajr time">05:00</p>
+                <h5 class="mosque-number-title" id="mosque-2-title">Mosque 2:</h5>
+                <div class="jamat-name-and-time-container-container mosque-2">
+                    <div class="jamat-name-and-time-container jamat-fajr">
+                        <p class="time-name">Fajr:</p>
+                        <p class="fajr time">05:00</p>
+                    </div>
+                    <div class="jamat-name-and-time-container">
+                        <p class="time-name">Zuhr:</p>
+                        <p class="zuhr time">05:00</p>
+                    </div>
+                    <div class="jamat-name-and-time-container">
+                        <p class="time-name">Asr:</p>
+                        <p class="asr time">05:00</p>
+                    </div>
+                    <div class="jamat-name-and-time-container">
+                        <p class="time-name">Maghrib:</p>
+                        <p class="maghrib time">05:00</p>
+                    </div>
+                    <div class="jamat-name-and-time-container jamat-isha">
+                        <p class="time-name">Isha:</p>
+                        <p class="isha time">05:00</p>
+                    </div>
                 </div>
-                <div class="jamat-name-and-time-container">
-                    <p class="time-name">Zuhr:</p>
-                    <p class="zuhr time">05:00</p>
+
+                <h5 class="mosque-number-title" id="mosque-3-title">Mosque 3:</h5>
+                <div class="jamat-name-and-time-container-container mosque-3">
+                    <div class="jamat-name-and-time-container jamat-fajr">
+                        <p class="time-name">Fajr:</p>
+                        <p class="fajr time">05:00</p>
+                    </div>
+                    <div class="jamat-name-and-time-container">
+                        <p class="time-name">Zuhr:</p>
+                        <p class="zuhr time">05:00</p>
+                    </div>
+                    <div class="jamat-name-and-time-container">
+                        <p class="time-name">Asr:</p>
+                        <p class="asr time">05:00</p>
+                    </div>
+                    <div class="jamat-name-and-time-container">
+                        <p class="time-name">Maghrib:</p>
+                        <p class="maghrib time">05:00</p>
+                    </div>
+                    <div class="jamat-name-and-time-container jamat-isha">
+                        <p class="time-name">Isha:</p>
+                        <p class="isha time">05:00</p>
+                    </div>
                 </div>
-                <div class="jamat-name-and-time-container">
-                    <p class="time-name">Asr:</p>
-                    <p class="asr time">05:00</p>
+
+                <h5 class="mosque-number-title" id="mosque-4-title">Mosque 4:</h5>
+                <div class="jamat-name-and-time-container-container mosque-4">
+                    <div class="jamat-name-and-time-container jamat-fajr">
+                        <p class="time-name">Fajr:</p>
+                        <p class="fajr time">05:00</p>
+                    </div>
+                    <div class="jamat-name-and-time-container">
+                        <p class="time-name">Zuhr:</p>
+                        <p class="zuhr time">05:00</p>
+                    </div>
+                    <div class="jamat-name-and-time-container">
+                        <p class="time-name">Asr:</p>
+                        <p class="asr time">05:00</p>
+                    </div>
+                    <div class="jamat-name-and-time-container">
+                        <p class="time-name">Maghrib:</p>
+                        <p class="maghrib time">05:00</p>
+                    </div>
+                    <div class="jamat-name-and-time-container jamat-isha">
+                        <p class="time-name">Isha:</p>
+                        <p class="isha time">05:00</p>
+                    </div>
                 </div>
-                <div class="jamat-name-and-time-container">
-                    <p class="time-name">Maghrib:</p>
-                    <p class="maghrib time">05:00</p>
+                
+            </div>
+            <button class="btn" type="button" id="defaultmosque" onclick="setDefaultMosque()">Set as Default Mosque</button>
+
+            <div class="horizontal-scroll">
+                <div class="next-start card">
+                    <p class="next-salah"><span class="next-salah-name">Fajr</span> begins at <span class="next-salah-time">05:00</span></p>
                 </div>
-                <div class="jamat-name-and-time-container jamat-isha">
-                    <p class="time-name">Isha:</p>
-                    <p class="isha time">05:00</p>
+                <div class="next-jamat card">
+                    <p class="next-jamat"><span class="next-jamat-name">Fajr</span> congregational prayer is at <span class="next-jamat-time">07:30</span> at <span class="next-jamat-mosque">Masjide Noor</span></p>
+                </div>
+                <div class="hadith card">
+                    <p id="dayHadith">Supplication is the essence of worship.</p>
                 </div>
             </div>
-            
         </div>
-        <button class="btn" type="button" id="defaultmosque" onclick="setDefaultMosque()">Set as Default Mosque</button>
-        </div>
-    </section>
-    <section class = 'dark-mode'>
-        <p>Ya like dark mode?</p>
     </section>
     <footer id="footer">
         <p>&#169; Salah Time Ltd. 2020</p>

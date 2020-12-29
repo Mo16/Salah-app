@@ -447,7 +447,7 @@ canvas {
 }
 
 #learnsection {
-    height: 80vh;
+    height: auto;
 
     
     padding: 4em;
@@ -658,6 +658,43 @@ canvas {
     text-transform: uppercase;
 }
 
+.horizontal-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0;
+    margin-top: 1em;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 5px;
+    scrollbar-width: none;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 70%;
+    max-width: 500px;
+    height: 200px;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 1em;
+    margin: 0 0.5em;
+}
+
+.next-start {
+    background-color: #3cc998b6;
+    font-size: 30px;
+    max-height: 200px;
+    color: white;
+}
+
 footer {
     background-color: rgba(255, 255, 255, 0.4);
     color: var(--black);
@@ -673,10 +710,6 @@ footer {
 
 footer p {
     padding: 1em;
-}
-
-.dark-mode {
-    display: none;
 }
 
 @keyframes bounceDown {
@@ -797,7 +830,7 @@ footer p {
     #learnsection {
         padding: 3em 2em 2em 2em;
         display: block;
-        height: 75vh;
+        height: auto;
     }
 
     .scrolldown {
@@ -906,12 +939,7 @@ footer p {
         display: block;
         padding: none;
         margin: 0 auto;
-    }
-
-    footer {
-        position: fixed;
-        bottom: 0;
-    }
+    }S
 }
 
 @media (prefers-color-scheme: dark) {
