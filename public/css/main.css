@@ -138,8 +138,8 @@ section:hover .cursor {
     width: 80vw;
     height: 350px;
     background-color: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     opacity: 1;
     z-index: 12;
     border-radius: 25px;
@@ -215,11 +215,8 @@ section:hover .cursor {
     height: 100%;
     color: #242424;
     border: none;
-    background-color: rgba(255, 255, 255, 0);
-    backdrop-filter: blur(10px);
-    
+    background-color: rgba(255, 255, 255, 0);    
     margin: 0;
-    /* cursor: text; */
     padding: 0;
     padding-top: 9px;
     font-size: 18px;
@@ -467,8 +464,8 @@ canvas {
     box-shadow: 4px 3px 25px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid #b4b4b4;
     border-right: 1px solid #b4b4b4;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 
 .start-times-title {
@@ -667,11 +664,11 @@ footer {
     padding: none;
     margin-top: 1em;
     text-align: center;
-    position: fixed;
+    /* position: fixed; */
     bottom: 0px;
     width: 100%;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 }
 
 footer p {
@@ -749,8 +746,8 @@ footer p {
         height: 100vh;
         z-index: 10;
         background-color: #c9563cb0;
-        -webkit-backdrop-filter: blur(5px);
-        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
         margin: 0;
         padding: 0;
     }
@@ -924,6 +921,30 @@ footer p {
         --complementary: #963b27;
         --complementary-dark: #4b1001;
     }
+
+    .alertContainer {
+        background:rgba(0, 0, 0, 0.5);
+        color: white;
+    }
+
+    .postcode-entrybox input {
+        color: white;
+        background-color: rgba(255, 255, 255, 0);        
+    }
+    
+    .postcode-entrybox label {
+        border-bottom: 1px solid white;
+    }
+    
+    .postcode-entrybox label::after {
+        border-bottom: 3px solid #46e9b0;
+    }
+    
+    .postcode-entrybox input:valid + .postcode-box-label span {
+        color: #46e9b0;
+    }
+
+
 
     .start-times-container {
         background:rgba(0, 0, 0, 0.5);
