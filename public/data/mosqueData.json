@@ -9,7 +9,7 @@
     "fajr": "07:00",
     "zuhr": "01:00",
     "asr": "02:45",
-    "maghrib": "04:09",
+    "maghrib": "04:10",
     "esha": "07:00"
   },
   "portsmouthcentralmosqueData": {
@@ -48,7 +48,7 @@
     "fajr": "7:30",
     "zuhr": "12:45",
     "asr": "3:00",
-    "maghrib": "3:59",
+    "maghrib": "4:00",
     "esha": "6:00"
   },
   "masjidnoorData": {
@@ -71,7 +71,7 @@
     "name": "eastlondonmosque",
     "longitude": -0.0676762,
     "latitude": 51.5175695,
-    "fajr": "06:55",
+    "fajr": "06:56",
     "zuhr": "12:45",
     "asr": "02:30",
     "maghrib": "04:09",
@@ -100,7 +100,7 @@
     "fajr": "7:00am",
     "zuhr": "1:00pm",
     "asr": "2:10pm",
-    "maghrib": "4:00pm",
+    "maghrib": "4:01pm",
     "esha": "8:00pm"
   }
 }

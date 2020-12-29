@@ -127,6 +127,14 @@ section:hover .cursor {
     }
 
     #infobox{
+
+        background: linear-gradient(50deg, var(--complementary), var(--complementary-dark));
+        color: white;
+        padding: 1em;
+        border-radius: 30px;
+        margin-top: 1em;
+        box-shadow: 4px 3px 25px rgba(0, 0, 0, 0.2);
+        transform-style: preserve-3d;
         width: 55%;
         height: 80%;
         bottom: 200px;
@@ -144,7 +152,15 @@ section:hover .cursor {
     }
     
     #picbox{
-    
+
+        background-color: rgba(244, 242, 243, 0.7);
+        padding: 1em;
+        border-radius: 30px;
+        box-shadow: 4px 3px 25px rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid #b4b4b4;
+        border-right: 1px solid #b4b4b4;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
         width: 40%;
         height: 80%;
         bottom: 00px;
@@ -562,10 +578,6 @@ canvas {
 
 
 .jamat-times-container {
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     background: linear-gradient(50deg, var(--complementary), var(--complementary-dark));
     color: white;
     padding: 1em;
