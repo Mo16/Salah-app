@@ -944,8 +944,6 @@ footer p {
         color: #46e9b0;
     }
 
-
-
     .start-times-container {
         background:rgba(0, 0, 0, 0.5);
         border: none;
@@ -954,6 +952,11 @@ footer p {
 
     .start-times-container img {
         filter: invert(180);
+    }
+
+    #mosque-dropdown {
+        color: white;
+        background-color: rgb(29, 29, 29);
     }
 
     footer {
