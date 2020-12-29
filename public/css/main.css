@@ -56,7 +56,8 @@ body {
 }
 
 .day {
-    background: linear-gradient(45deg, #93BEDF, #456990);
+    background: url("day-mosque.jpg") center no-repeat, linear-gradient(45deg, #93BEDF, #456990);
+    background-attachment: fixed;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -65,7 +66,7 @@ body {
 }
 
 .night {
-    background: linear-gradient(45deg, #0E131F, #003249);
+    background: url("night-mosque.jpg") center no-repeat, linear-gradient(45deg, #0E131F, #003249);
     height: 100%;
     width: 100%;
     position: absolute;
@@ -416,6 +417,7 @@ nav ul li a {
     position: relative;
     bottom: 2em;
     z-index: 9;
+    overflow: hidden;
 }
 
 .or-enter-manually {
@@ -663,6 +665,7 @@ footer {
     background-color: rgba(255, 255, 255, 0.4);
     color: var(--black);
     padding: none;
+    margin-top: 1em;
     text-align: center;
     position: fixed;
     bottom: 0px;
@@ -709,6 +712,7 @@ footer p {
 @media only screen and (max-width: 650px) {
     body {
         /* cursor: auto !important; */
+        position: relative;
     }
 
     a, p, h1, h2, h3, li {
