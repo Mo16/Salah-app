@@ -5,6 +5,7 @@ async function getBeginningTimes(longitude,latitude){
         return response.json();
     }).then((data)=>{
         writeBeginningTimes(data.data.timings)
+        whichNamaz(data.data.timings)
     })
 }
 
