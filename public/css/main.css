@@ -737,6 +737,47 @@ canvas {
     font-size: 2.4em;
 }
 
+.carousel-dots {
+    margin: auto;
+    text-align: center;
+    position: relative;
+    bottom: 2em;
+}
+
+.carousel-dots ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.carousel-dots ul li {
+    margin: 5px;
+    list-style: none;
+    display: block;
+    position: relative;
+    float: left;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color:rgba(244, 242, 243, 0.7);
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.3s width ease;
+    transition: 0.3s height ease;
+}
+
+.active-dot {
+    height: 12px;
+    width: 12px;
+    position: relative;
+    top: 2px;
+    transition: 0.3s width ease;
+    transition: 0.3s height ease;
+}
+
 footer {
     background-color: rgba(255, 255, 255, 0.4);
     color: var(--black);

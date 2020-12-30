@@ -201,6 +201,29 @@ function clock() {
 
 clock();
 
+function checkCarouselScroll() {
+    let carousel = document.querySelector('.horizontal-scroll');
+
+    console.log(carousel.scrollLeft);
+
+    if (carousel.scrollLeft < 3) {
+        document.querySelector('.dot1').classList.add('active-dot');
+        document.querySelector('.dot2').classList.remove('active-dot');
+        document.querySelector('.dot3').classList.remove('active-dot');
+        console.log('1')
+    } else if (3 < carousel.scrollLeft && carousel.scrollLeft < 1067) {
+        document.querySelector('.dot1').classList.remove('active-dot');
+        document.querySelector('.dot2').classList.add('active-dot');
+        document.querySelector('.dot3').classList.remove('active-dot');
+        console.log('2')
+    } else if (carousel.scrollLeft > 2100) {
+        document.querySelector('.dot1').classList.remove('active-dot');
+        document.querySelector('.dot2').classList.remove('active-dot');
+        document.querySelector('.dot3').classList.add('active-dot');
+        console.log('3')
+    }
+}
+
 if (Cookies.get('latitude') && Cookies.get('longitude') && Cookies.get('city')) {
     loadShow();
     document.querySelector('section').style.display="block";

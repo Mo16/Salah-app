@@ -245,7 +245,7 @@
             </div>
             <button class="btn" type="button" id="defaultmosque" onclick="setDefaultMosque()">Set as Default Mosque</button>
 
-            <div class="horizontal-scroll">
+            <div class="horizontal-scroll" onscroll="checkCarouselScroll()">
                 <div class="card-container">
                     <div class="next-start card">
                         <h3>Next Salah</h3>
@@ -272,6 +272,13 @@
                         <p id="dayHadith">Supplication is the essence of worship.</p>
                     </div>
                 </div>
+            </div>
+            <div class="carousel-dots">
+                <ul>
+                    <li><span class="active-dot dot dot1"></span></li>
+                    <li><span class="dot dot2"></span></li>
+                    <li><span class="dot dot3"></span></li>
+                </ul>
             </div>
         </div>
     </section>
