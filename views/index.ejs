@@ -246,14 +246,31 @@
             <button class="btn" type="button" id="defaultmosque" onclick="setDefaultMosque()">Set as Default Mosque</button>
 
             <div class="horizontal-scroll">
-                <div class="next-start card">
-                    <p class="next-salah"><span class="next-salah-name">Fajr</span> begins at <span class="next-salah-time">05:00</span></p>
+                <div class="card-container">
+                    <div class="next-start card">
+                        <h3>Next Salah</h3>
+                        <div class="start-grid">
+                            <div class="next-salah-start">
+                                <h5 class="next-salah-name">Fajr:</h5>
+                                <h4 class="next-salah-time">05:00</h4>
+                                <p class="next-salah-in">In 5 hours and 34 minutes.</p>
+                            </div>
+                            <div class="current-time-start">
+                                <h5 class="current-time-title">Current Time:</h5>
+                                <h4 class="current-time">06:34</h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="next-jamat card">
-                    <p class="next-jamat"><span class="next-jamat-name">Fajr</span> congregational prayer is at <span class="next-jamat-time">07:30</span> at <span class="next-jamat-mosque">Masjide Noor</span></p>
+                <div class="card-container">
+                    <div class="next-jamat card">
+                        <p class="next-jamat"><span class="next-jamat-name">Fajr</span> congregational prayer is at <span class="next-jamat-time">07:30</span> at <span class="next-jamat-mosque">Masjide Noor</span></p>
+                    </div>
                 </div>
-                <div class="hadith card">
-                    <p id="dayHadith">Supplication is the essence of worship.</p>
+                <div class="card-container">
+                    <div class="hadith card">
+                        <p id="dayHadith">Supplication is the essence of worship.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -267,8 +284,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
     <script src="js/backgroundChange.js"></script>
-    <script src="js/floaters.js"></script>
+    <!-- <script src="js/floaters.js"></script> -->
     <script src="js/animations.js"></script>
+    <script src="js/closestTime.js"></script>
     <script src="js/beginningTimes.js"></script>
     <script src="js/jamatTimes.js"></script>
     <script src="js/locating.js"></script>

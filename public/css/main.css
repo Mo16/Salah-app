@@ -674,25 +674,67 @@ canvas {
     display: none;
 }
 
-.card {
+.card-container {
     flex: 0 0 auto;
     scroll-snap-align: start;
-    width: 70%;
-    max-width: 500px;
-    height: 200px;
+    width: 100%;
+}
+
+.card {
     border-radius: 25px;
     background-color: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: 1em;
     margin: 0 0.5em;
+    min-height: 150px;
+    max-height: 300px;
 }
 
 .next-start {
-    background-color: #3cc998b6;
-    font-size: 30px;
+    background-color: #197d5ab4;
     max-height: 200px;
     color: white;
+}
+
+.next-start h3 {
+    text-transform: uppercase;
+    font-size: 1.4em;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+}
+
+.start-grid {
+    display: grid;
+    grid-template-columns: minmax(auto, 70%);
+    grid-template-areas: 'start-time current-time';
+}
+
+.next-salah-start {
+    grid-area: 'start-time';
+}
+
+.next-salah-name {
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.next-salah-time {
+    font-size: 2.5em;
+}
+
+.current-time-start {
+    grid-area: 'current-time';
+}
+
+.current-time-title {
+    font-size: 1.5em;
+}
+
+.current-time {
+    font-size: 2.4em;
 }
 
 footer {

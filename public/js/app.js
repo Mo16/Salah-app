@@ -172,6 +172,21 @@ function changeLocation() {
     location.reload();
 }
 
+function clock() {
+    var today = new Date();
+    var hours = today.getHours();
+    var minutes = today.getMinutes();
+
+    var time = `${hours}:${minutes}`;
+    document.querySelector('.current-time').innerHTML = time;
+
+    setTimeout(() => {
+        clock();
+    }, 2000);
+}
+
+clock();
+
 if (Cookies.get('latitude') && Cookies.get('longitude') && Cookies.get('city')) {
     loadShow();
     document.querySelector('section').style.display="block";

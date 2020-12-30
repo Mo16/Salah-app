@@ -5,6 +5,7 @@ async function loadJamatTimes(city) {
     fillDropdown(data, city);
     showDefaultMosque(data);
     checkMosques(data,city)
+    
 }
 
 function checkMosques(data,city){
@@ -13,12 +14,12 @@ function checkMosques(data,city){
     let cities = [];
     Object.values(data).map((mosque) =>{
         cities.push(mosque.city)
-    }).join("")
+    }).join("");
+
     if (!cities.includes((Cookies.get("city")).toLowerCase()) || !cities.includes(city) ) {
         if (is_mobile){
             document.querySelector('#defaultmosque').style.display = 'block';
         }
-        console.log("has No mosques")
         document.querySelector('#defaultmosque').innerHTML = "Add a mosque to your location"
         document.querySelector('#defaultmosque').onclick = addLocation
 
@@ -27,7 +28,6 @@ function checkMosques(data,city){
         if (!is_mobile){
             document.querySelector('#defaultmosque').style.display = 'none';
         }
-        console.log("has mosqeus")
         document.querySelector('#defaultmosque').innerHTML = "Use as Default Mosque"
     }
 
@@ -35,7 +35,7 @@ function checkMosques(data,city){
 }
 
 function addLocation(){
-    alert("We will fix once we have a route lol")
+    alert("This service is currently unavailable.")
 }
 
 
