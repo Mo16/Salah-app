@@ -66,6 +66,7 @@ async function getCity(longitude, latitude) {
     loadJamatTimes(city);
     dayOrNight();
     loadHide();
+    animateBoxes(1.5)
 }
 
 async function validateCity(data, cities) {

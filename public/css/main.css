@@ -117,6 +117,16 @@ section:hover .cursor {
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 12;
     display: none;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3 ease-in-out;
+}
+
+.loadicon.fade{
+    opacity:0;
 }
 
 .loadicon img {
@@ -270,6 +280,30 @@ section:hover .cursor {
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
+}
+
+
+@media screen and (min-width: 768px){
+    .jamat-times-container {
+        margin-left:60%;
+    }
+    .start-times-container {
+        margin-left:60%;
+    }
+
+    .horizontal-scroll{
+        position: absolute;
+        max-width: 40%;
+    }
+    .next-start{
+        height: 900px;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .start-grid{
+        font-size: 85%;
+    }
 }
 
 @keyframes shake {

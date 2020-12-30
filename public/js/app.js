@@ -119,6 +119,7 @@ function changeDropdownBarText(x) {
 }
 
 function loadShow() {
+    
     document.querySelector('.loadicon').style.display = "block";
     document.querySelector('.loadicon').style.transform = "translateZ(200px)";
 }

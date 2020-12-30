@@ -1,3 +1,5 @@
+var selectedColor = "yellow"
+
 function whichNamaz(data) {
     namazTimes = [data.Fajr, data.Dhuhr, data.Asr, data.Maghrib, data.Isha];
     var today = new Date();
@@ -18,26 +20,52 @@ function whichNamaz(data) {
       case 1:
         document.querySelector('.next-salah-name').innerHTML = "Fajr:";
         document.querySelector('.next-salah-time').innerHTML = data.Fajr;
+        document.querySelector('.j-fajr').style.color = selectedColor;
+        document.querySelector('.fajr-jamat-time-name').style.color = selectedColor;
+        document.querySelector('.fajr-start-time-name').style.color = selectedColor;
+        document.querySelector('.fajr').style.color = selectedColor;
+
+
         calculateTimeRemaining(data.Fajr);
         break;
       case 2:
         document.querySelector('.next-salah-name').innerHTML = "Zuhr:";
+        document.querySelector('.j-zuhr').style.color = "blue";
         document.querySelector('.next-salah-time').innerHTML = data.Dhuhr;
+        document.querySelector('.j-zuhr').style.color = selectedColor;
+        document.querySelector('.zuhr-jamat-time-name').style.color = selectedColor;
+        document.querySelector('.zuhr-start-time-name').style.color = selectedColor;
+        document.querySelector('.zuhr').style.color = selectedColor;
         calculateTimeRemaining(data.Dhuhr);
         break;
       case 3:
         document.querySelector('.next-salah-name').innerHTML = "Asr:";
+        document.querySelector('.j-asr').style.color = "blue";
         document.querySelector('.next-salah-time').innerHTML = data.Asr;
+        document.querySelector('.j-asr').style.color = selectedColor;
+        document.querySelector('.asr-jamat-time-name').style.color = selectedColor;
+        document.querySelector('.asr-start-time-name').style.color = selectedColor;
+        document.querySelector('.asr').style.color = selectedColor;
         calculateTimeRemaining(data.Asr);
         break;
       case 4:
         document.querySelector('.next-salah-name').innerHTML = "Maghrib:";
+        document.querySelector('.j-magbrib').style.color = "blue";
         document.querySelector('.next-salah-time').innerHTML = data.Maghrib;
+        document.querySelector('.j-maghrib').style.color = selectedColor;
+        document.querySelector('.maghrib-jamat-time-name').style.color = selectedColor;
+        document.querySelector('.maghrib-start-time-name').style.color = selectedColor;
+        document.querySelector('.maghrib').style.color = selectedColor;
         calculateTimeRemaining(data.Maghrib);
         break;
       case 5:
         document.querySelector('.next-salah-name').innerHTML = "Isha:";
+        document.querySelector('.j-isha').style.color = "blue";
         document.querySelector('.next-salah-time').innerHTML = data.Isha;
+        document.querySelector('.j-isha').style.color = selectedColor;
+        document.querySelector('.isha-jamat-time-name').style.color = selectedColor;
+        document.querySelector('.isha-start-time-name').style.color = selectedColor;
+        document.querySelector('.isha').style.color = selectedColor;
         calculateTimeRemaining(data.Isha);
         break;
     }

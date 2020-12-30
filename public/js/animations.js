@@ -27,6 +27,15 @@ function callParallax(e){
 }
 
 
+function animateBoxes(delayTime){
+  gsap.from('.start-times-container', {duration: 1, y:-100 ,x:100, opacity:0, delay: delayTime, ease: "expo.in"});
+  gsap.from('.horizontal-scroll', {duration: 1, x:-50, opacity:0, delay: delayTime+0.5, ease: "expo.in"});
+  gsap.from('.jamat-times-container', {duration: 1, y:-100, x:100, opacity:0, delay: delayTime, ease: "expo.in"});
+
+}
+animateBoxes(0.5)
+
+
 learnbtn.addEventListener('mousemove', function(e){
   if (window.innerWidth > 700) {callParallax(e);}
 });
@@ -60,8 +69,10 @@ jamatContainer.addEventListener("mousemove", e => {
     let yAxis = ((window.innerHeight / 2) - e.pageY  + 100) / 200;
     jamatContainer.style.transform = `rotateX(${yAxis}deg) rotateY(${xAxis}deg)`;
 
+    jamatContainer.style.transition = "all 1s ease"
     title.style.transition = "all 1s ease";
     dropdown.style.transition = "all 1s ease";
+    jamatContainer.style.transition = "all 0.3s ease"
     times1.style.transition = "all 0.3s ease";
     times2.style.transition = "all 0.3s ease";
     times3.style.transition = "all 0.3s ease";
@@ -71,18 +82,19 @@ jamatContainer.addEventListener("mousemove", e => {
     mosque3title.style.transition = "all 0.3s ease";
     mosque4title.style.transition = "all 0.3s ease";
 
-    title.style.transform = 'translateZ(200px)';
+    jamatContainer.style.transform = "translateZ(50px)"
+    title.style.transform = 'translateZ(50px)';
     title.style.fontSize = '1.3em';
     dropdown.style.transform = 'translateZ(150px)';
     //dropdown.style.boxShadow = `15px 15px 25px rgba(0,0,0,0.3)`;
-    times1.style.transform = 'translateZ(120px)';
-    times2.style.transform = 'translateZ(120px)';
-    times3.style.transform = 'translateZ(120px)';
-    times4.style.transform = 'translateZ(120px)';
-    mosque1title.style.transform = 'translateZ(140px)';
-    mosque2title.style.transform = 'translateZ(140px)';
-    mosque3title.style.transform = 'translateZ(140px)';
-    mosque4title.style.transform = 'translateZ(140px)';
+    times1.style.transform = 'translateZ(20px)';
+    times2.style.transform = 'translateZ(20px)';
+    times3.style.transform = 'translateZ(20px)';
+    times4.style.transform = 'translateZ(20px)';
+    mosque1title.style.transform = 'translateZ(40px)';
+    mosque2title.style.transform = 'translateZ(40px)';
+    mosque3title.style.transform = 'translateZ(40px)';
+    mosque4title.style.transform = 'translateZ(40px)';
   }
 });
 
