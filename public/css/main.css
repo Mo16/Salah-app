@@ -765,8 +765,8 @@ canvas {
     background-color:rgba(244, 242, 243, 0.7);
     border-radius: 50%;
     display: inline-block;
-    transition: 0.3s width ease;
-    transition: 0.3s height ease;
+    transition: 0.3s width;
+    transition: 0.3s height;
 }
 
 .active-dot {
@@ -774,8 +774,8 @@ canvas {
     width: 12px;
     position: relative;
     top: 2px;
-    transition: 0.3s width ease;
-    transition: 0.3s height ease;
+    transition: 0.3s width;
+    transition: 0.3s height;
 }
 
 footer {
