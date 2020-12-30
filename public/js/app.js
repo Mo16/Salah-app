@@ -205,21 +205,18 @@ function checkCarouselScroll() {
     let carousel = document.querySelector('.horizontal-scroll');
     let maxScrollArea = window.innerWidth/0.6;
 
-    if (carousel.scrollLeft < 3) {
+    if (carousel.scrollLeft < maxScrollArea/3) {
         document.querySelector('.dot1').classList.add('active-dot');
         document.querySelector('.dot2').classList.remove('active-dot');
         document.querySelector('.dot3').classList.remove('active-dot');
-        console.log('1')
-    } else if (3 < carousel.scrollLeft && carousel.scrollLeft < (maxScrollArea/3)*2 ) {
+    } else if (maxScrollArea/3 < carousel.scrollLeft && carousel.scrollLeft < (maxScrollArea/3)*2 ) {
         document.querySelector('.dot1').classList.remove('active-dot');
         document.querySelector('.dot2').classList.add('active-dot');
         document.querySelector('.dot3').classList.remove('active-dot');
-        console.log('2')
     } else if ( carousel.scrollLeft > (maxScrollArea/3)*2 ) {
         document.querySelector('.dot1').classList.remove('active-dot');
         document.querySelector('.dot2').classList.remove('active-dot');
         document.querySelector('.dot3').classList.add('active-dot');
-        console.log('3')
     }
 }
 
