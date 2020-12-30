@@ -176,13 +176,27 @@ function clock() {
     var today = new Date();
     var hours = today.getHours();
     var minutes = today.getMinutes();
+    var seconds = today.getSeconds();
 
-    var time = `${hours}:${minutes}`;
+    if (minutes < 10) {
+        minutes = "0"+minutes;
+    }
+
+    if (hours < 10) {
+        hours = "0" + hours;
+    }
+
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+
+    var time = `${hours}:${minutes}:${seconds}`;
+
     document.querySelector('.current-time').innerHTML = time;
 
     setTimeout(() => {
         clock();
-    }, 2000);
+    }, 1000);
 }
 
 clock();
