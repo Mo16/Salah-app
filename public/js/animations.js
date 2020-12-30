@@ -28,9 +28,11 @@ function callParallax(e){
 
 
 function animateBoxes(delayTime){
-  gsap.from('.start-times-container', {duration: 1, y:-100 ,x:100, opacity:0, delay: delayTime, ease: "expo.in"});
-  gsap.from('.horizontal-scroll', {duration: 1, x:-50, opacity:0, delay: delayTime+0.5, ease: "expo.in"});
-  gsap.from('.jamat-times-container', {duration: 1, y:-100, x:100, opacity:0, delay: delayTime, ease: "expo.in"});
+  gsap.from('.start-times-container', {duration: 1, y:-100 ,x:100, opacity:0, delay: delayTime+0.5, ease: "expo.in"});
+  gsap.from('.horizontal-scroll', {duration: 1, x:-50, opacity:0, delay: delayTime, ease: "expo.in"});
+  gsap.from('.carousel-dots', {duration: 1, x:-50, opacity:0, delay: delayTime, ease: "expo.in"});
+  gsap.from('.jamat-times-container', {duration: 1, y:-100, x:100, opacity:0, delay: delayTime+0.5, ease: "expo.in"});
+
 
 }
 animateBoxes(0.5)
