@@ -90,7 +90,7 @@
         <section class="location">
             <span class="material-icons">location_on</span><p>Location</p>
         </section>
-
+        <div class="carousel">
             <div class="horizontal-scroll" onscroll="checkCarouselScroll()">
                 <div class="card-container">
                     <div class="next-start card">
@@ -119,7 +119,14 @@
                     </div>
                 </div>
             </div>
-
+            <div class="carousel-dots">
+                <ul>
+                    <li><span class="active-dot dot dot1"></span></li>
+                    <li><span class="dot dot2"></span></li>
+                    <li><span class="dot dot3"></span></li>
+                </ul>
+            </div>
+        </div>
 
         <div class="times-container">
             <div class="start-times-container">
@@ -275,15 +282,6 @@
                 
             </div>
             <button class="btn" type="button" id="defaultmosque" onclick="setDefaultMosque()">Set as Default Mosque</button>
-
-
-            <div class="carousel-dots">
-                <ul>
-                    <li><span class="active-dot dot dot1"></span></li>
-                    <li><span class="dot dot2"></span></li>
-                    <li><span class="dot dot3"></span></li>
-                </ul>
-            </div>
         </div>
     </section>
     <footer id="footer">

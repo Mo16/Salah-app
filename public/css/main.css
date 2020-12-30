@@ -39,7 +39,7 @@ html {
 body {
     background: linear-gradient(45deg, var(--primary), #105e43);
     /* cursor: none; */
-    perspective: 1400px;
+    perspective: 1000px;
     position: relative;
 }
 
@@ -483,6 +483,7 @@ canvas {
 #learnsection {
     height: auto;
 
+    min-height: 80vh;
     
     padding: 4em;
 
@@ -692,6 +693,10 @@ canvas {
     text-transform: uppercase;
 }
 
+.carousel {
+    position: relative;
+}
+
 .horizontal-scroll {
     display: flex;
     flex-wrap: nowrap;
@@ -774,13 +779,14 @@ canvas {
 .carousel-dots {
     margin: auto;
     text-align: center;
-    position: relative;
+    /* position: absolute;
     bottom: 2em;
+    left: 50%; */
 }
 
 .carousel-dots ul {
     display: inline-block;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     position: relative;
 }
@@ -1056,7 +1062,11 @@ footer p {
         display: block;
         padding: none;
         margin: 0 auto;
-    }S
+    }
+
+    .carousel {
+        margin-bottom: 1em;
+    }
 }
 
 @media (prefers-color-scheme: dark) {

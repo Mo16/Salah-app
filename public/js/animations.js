@@ -37,7 +37,7 @@ animateBoxes(0.5)
 
 
 learnbtn.addEventListener('mousemove', function(e){
-  if (window.innerWidth > 700) {callParallax(e);}
+  if (window.innerWidth > 700) {callParallax(e)}
 });
 
 learnbtn.addEventListener('mouseleave', function(e){
@@ -65,8 +65,8 @@ const mosque4title = document.querySelector('#mosque-4-title');
 
 jamatContainer.addEventListener("mousemove", e => {
   if (window.innerWidth > 700) {
-    let xAxis = ((window.innerWidth / 2) - e.pageX) / 200;
-    let yAxis = ((window.innerHeight / 2) - e.pageY  + 100) / 200;
+    let xAxis = ((window.innerWidth / 2) - e.pageX) / 50;
+    let yAxis = ((window.innerHeight / 2) - e.pageY  + 100) / 50;
     jamatContainer.style.transform = `rotateX(${yAxis}deg) rotateY(${xAxis}deg)`;
 
     jamatContainer.style.transition = "all 1s ease"
@@ -82,7 +82,7 @@ jamatContainer.addEventListener("mousemove", e => {
     mosque3title.style.transition = "all 0.3s ease";
     mosque4title.style.transition = "all 0.3s ease";
 
-    jamatContainer.style.transform = "translateZ(50px)"
+    jamatContainer.style.transform = "translateZ(50px)";
     title.style.transform = 'translateZ(50px)';
     title.style.fontSize = '1.3em';
     dropdown.style.transform = 'translateZ(150px)';
