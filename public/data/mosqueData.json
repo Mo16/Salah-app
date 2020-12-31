@@ -1,4 +1,17 @@
 {
+  "Masjid E HidayaData": {
+    "city": "manchester",
+    "value": "Masjid E HidayaData",
+    "dropdownid": "masjidhidaya",
+    "name": "Masjid E Hidaya",
+    "longitude": -2.2655507,
+    "latitude": 53.460853,
+    "fajr": "7:30",
+    "zuhr": "12:45",
+    "asr": "3:00",
+    "maghrib": "4:02",
+    "esha": "6:00"
+  },
   "jamimosqueData": {
     "city": "portsmouth",
     "value": "jamimosqueData",
@@ -20,49 +33,10 @@
     "longitude": -1.0795891,
     "latitude": 50.7980541,
     "fajr": "7:00 AM",
-    "zuhr": "12:45 PM",
-    "asr": "2:45 PM",
+    "zuhr": "1:00 PM",
+    "asr": "3:00 PM",
     "maghrib": "4:12 PM",
     "esha": "7:15 PM"
-  },
-  "didsburymosqueData": {
-    "city": "manchester",
-    "value": "didsburymosqueData",
-    "dropdownid": "Didsbury Mosque",
-    "name": "didsburymosque",
-    "longitude": -2.2490131,
-    "latitude": 53.4227222,
-    "fajr": "7:15 am",
-    "zuhr": "12:30 pm",
-    "asr": "2:00 pm",
-    "maghrib": "4:01 pm",
-    "esha": "7:30 pm"
-  },
-  "masjidhidayaData": {
-    "city": "manchester",
-    "value": "masjidhidayaData",
-    "name": "masjidhidaya",
-    "dropdownid": "Masjid E Hidaya",
-    "longitude": -2.2655507,
-    "latitude": 53.460853,
-    "fajr": "7:30",
-    "zuhr": "12:45",
-    "asr": "3:00",
-    "maghrib": "4:02",
-    "esha": "6:00"
-  },
-  "masjidnoorData": {
-    "city": "manchester",
-    "value": "masjidnoorData",
-    "dropdownid": "Masjid e Noor",
-    "name": "masjidnoor",
-    "longitude": -2.3350271,
-    "latitude": 52.6461168,
-    "fajr": "07:15",
-    "zuhr": "01:00",
-    "asr": "03:00",
-    "maghrib": "04:02",
-    "esha": "07:00"
   },
   "eastlondonmosqueData": {
     "city": "london",
@@ -77,6 +51,45 @@
     "maghrib": "04:11",
     "esha": "07:30"
   },
+  "masjidnoorData": {
+    "city": "manchester",
+    "value": "masjidnoorData",
+    "dropdownid": "Masjid e Noor",
+    "name": "masjidnoor",
+    "longitude": -2.3350271,
+    "latitude": 52.6461168,
+    "fajr": "07:15",
+    "zuhr": "01:00",
+    "asr": "03:00",
+    "maghrib": "04:02",
+    "esha": "07:00"
+  },
+  "didsburymosqueData": {
+    "city": "manchester",
+    "value": "didsburymosqueData",
+    "dropdownid": "Didsbury Mosque",
+    "name": "didsburymosque",
+    "longitude": -2.2490131,
+    "latitude": 53.4227222,
+    "fajr": "",
+    "zuhr": "",
+    "asr": "",
+    "maghrib": "",
+    "esha": ""
+  },
+  "glasgowCentralData": {
+    "city": "glasgow",
+    "value": "glasgowCentralData",
+    "dropdownid": "Glasgow Central Mosque",
+    "name": "glasgowCentral",
+    "longitude": -4.251607,
+    "latitude": 55.852387,
+    "fajr": "7:00am",
+    "zuhr": "1:00pm",
+    "asr": "2:10pm",
+    "maghrib": "4:03pm",
+    "esha": "8:00pm"
+  },
   "finsburyparkmosqueData": {
     "city": "london",
     "value": "finsburyparkmosqueData",
@@ -90,17 +103,17 @@
     "maghrib": "16:11",
     "esha": "18:30"
   },
-  "glasgowCentralData": {
-    "city": "glasgow",
-    "value": "glasgowCentralData",
-    "dropdownid": "Glasgow Central Mosque",
-    "name": "glasgowCentral",
+  "tesstData": {
+    "city": "test",
+    "value": "tesstData",
+    "dropdownid": "test Central Mosque",
+    "name": "tesst",
     "longitude": -4.251607,
     "latitude": 55.852387,
     "fajr": "7:00am",
     "zuhr": "1:00pm",
     "asr": "2:10pm",
-    "maghrib": "4:02pm",
+    "maghrib": "4:03pm",
     "esha": "8:00pm"
   }
 }
