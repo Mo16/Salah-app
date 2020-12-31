@@ -198,7 +198,8 @@ function clock() {
 
     var time = `${hours}:${minutes}:${seconds}`;
 
-    document.querySelector('.current-time').innerHTML = time;
+    document.querySelector('.current-time-1').innerHTML = time;
+    document.querySelector('.current-time-2').innerHTML = time;
 
     setTimeout(() => {
         clock();

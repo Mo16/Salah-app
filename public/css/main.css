@@ -741,7 +741,7 @@ canvas {
     color: white;
 }
 
-.next-start h3 {
+.next-start h3, .next-jamat h3 {
     text-transform: uppercase;
     font-size: 1.4em;
     text-align: center;
@@ -756,16 +756,16 @@ canvas {
     grid-template-areas: 'start-time current-time';
 }
 
-.next-salah-start {
+.next-salah-start, .next-salah-jamat {
     grid-area: 'start-time';
 }
 
-.next-salah-name {
+.next-salah-name, .next-jamat-name {
     font-size: 1.5em;
     font-weight: 400;
 }
 
-.next-salah-time {
+.next-salah-time, .next-jamat-time {
     font-size: 2.5em;
 }
 
