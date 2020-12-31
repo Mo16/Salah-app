@@ -5,7 +5,7 @@ function whichNamaz(data) {
     var today = new Date();
     var currentTime = today.setHours(today.getHours(), today.getMinutes());
 
-    var counter = 0;
+    var counter = 1;
     for (let i = 0; i < namazTimes.length; i++) {
       let namazHour = parseInt((namazTimes[i])[0] + (namazTimes[i])[1]);
       let namazMin = parseInt((namazTimes[i])[3] + (namazTimes[i])[4]);
