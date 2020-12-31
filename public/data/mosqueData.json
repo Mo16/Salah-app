@@ -9,7 +9,7 @@
     "fajr": "07:00",
     "zuhr": "01:00",
     "asr": "02:45",
-    "maghrib": "04:11",
+    "maghrib": "04:12",
     "esha": "07:00"
   },
   "portsmouthcentralmosqueData": {
@@ -35,7 +35,7 @@
     "fajr": "7:15 am",
     "zuhr": "12:30 pm",
     "asr": "2:00 pm",
-    "maghrib": "4:00 pm",
+    "maghrib": "4:01 pm",
     "esha": "7:30 pm"
   },
   "masjidhidayaData": {
@@ -48,7 +48,7 @@
     "fajr": "7:30",
     "zuhr": "12:45",
     "asr": "3:00",
-    "maghrib": "4:01",
+    "maghrib": "4:02",
     "esha": "6:00"
   },
   "masjidnoorData": {
@@ -61,7 +61,7 @@
     "fajr": "07:15",
     "zuhr": "01:00",
     "asr": "03:00",
-    "maghrib": "04:01",
+    "maghrib": "04:02",
     "esha": "07:00"
   },
   "eastlondonmosqueData": {
@@ -74,7 +74,7 @@
     "fajr": "06:56",
     "zuhr": "12:45",
     "asr": "02:30",
-    "maghrib": "04:10",
+    "maghrib": "04:11",
     "esha": "07:30"
   },
   "finsburyparkmosqueData": {
@@ -87,7 +87,7 @@
     "fajr": "06:40",
     "zuhr": "12:30",
     "asr": "14:00",
-    "maghrib": "16:10",
+    "maghrib": "16:11",
     "esha": "18:30"
   },
   "glasgowCentralData": {

@@ -1,24 +1,34 @@
-/*
- ignore this for now rauf lmao
- */
-
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 
 
+var masjidnoorData,
+  jamimosqueData,
+  masjidhidayaData,
+  didsburymosqueData,
+  portsmouthcentralmosqueData,
+  eastlondonmosqueData,
+  finsburyparkmosqueData,
+  glasgowCentralData,
+  filePath = "public/data/mosqueData.json";
+
+
+
 class Mosque {
-  constructor(
-    name, url, fajr, zuhr, asr, maghrib, esha, longitude, latitude, dropdownid) {
+  constructor(city, value, dropdownid, name, longitude, latitude, fajr, zuhr, asr, maghrib, esha,url) {
+    this.city = city;
+    this.value = value;
+    this.dropdownid = dropdownid;
     this.name = name;
-    this.url = url;
+    this.latitude = latitude;
+    this.longitude = longitude;
     this.fajr = fajr;
     this.zuhr = zuhr;
     this.asr = asr;
     this.maghrib = maghrib;
     this.esha = esha;
-    this.latitude = latitude;
-    this.longitude = longitude;
-    this.dropdownid = dropdownid;
+    this.url = url
+
   }
 
   async openSite() {
@@ -42,49 +52,65 @@ class Mosque {
       await page.waitForSelector(this.maghrib);
       await page.waitForSelector(this.esha);
 
-
-      await page.evaluate(function work(f,z,a,m,e) {
-        let fajr = document.querySelector(f)
-        let zuhr = document.querySelector(z);
-        let asr = document.querySelector(a);
-        let maghrib = document.querySelector(m);
-        let esha = document.querySelector(e);
+      let data = await page.evaluate((that) => {
+        let fajr = document.querySelector(that.fajr).innerText;
+        let zuhr = document.querySelector(that.zuhr).innerText;
+        let asr = document.querySelector(that.asr).innerText;
+        let maghrib = document.querySelector(that.maghrib).innerText;
+        let esha = document.querySelector(that.esha).innerText;
 
         return {
-          city: this.city,
-          value: this.name + "Data",
-          dropdownid: this.dropdownid,
-          name: this.name,
-          longitude: this.longitude,
-          latitude: this.latitude,
+          city: that.city,
+          value: that.name + "Data",
+          dropdownid: that.dropdownid,
+          name: that.name,
+          longitude: that.longitude,
+          latitude: that.latitude,
           fajr,
           zuhr,
           asr,
           maghrib,
           esha,
         };
-      });
-      work(this.fajr,this.zuhr,this.asr,this.maghrib,this.esha)
-      console.log(work);
+      },this);
+      this.saveToVariable(data)
+      await page.close();
     } catch (err) {
       await page.close();
       console.log("Couldn't get data because: \n" + err);
     }
   }
 
+  saveToVariable(data){
+
+    return 
+  //   for (let i = 0; i < mosques.length; i++) {
+  //     if (this.value == mosques[i]){
+        
+  //     }
+      
+  //   }
+  //   console.log(jamimosqueData)
+
+  }
+
+
 }
 
-var jamimosque = new Mosque(
+
+var mosques = [jamimosque = new Mosque(
+  "portsmouth",
+  "jamimosqueData",
+  "Portsmouth Jami Mosque",
   "jamimosque",
-  "http://portsmouthjamimosque.co.uk/",
+  -1.0817852,
+  50.7941668,
   "body > main > section.section.background-dark > div > div > div.s-12.m-12.l-4.margin-m-bottom.prayer-times > div:nth-child(5) > div:nth-child(3)",
   "body > main > section.section.background-dark > div > div > div.s-12.m-12.l-4.margin-m-bottom.prayer-times > div:nth-child(6) > div:nth-child(3)",
   "body > main > section.section.background-dark > div > div > div.s-12.m-12.l-4.margin-m-bottom.prayer-times > div:nth-child(7) > div:nth-child(3)",
   "body > main > section.section.background-dark > div > div > div.s-12.m-12.l-4.margin-m-bottom.prayer-times > div:nth-child(8) > div:nth-child(2)",
   "body > main > section.section.background-dark > div > div > div.s-12.m-12.l-4.margin-m-bottom.prayer-times > div:nth-child(9) > div:nth-child(3)",
-  1,
-  2,
-  "ports jami"
-);
+  "http://portsmouthjamimosque.co.uk/",
+);]
 
 jamimosque.openSite();
