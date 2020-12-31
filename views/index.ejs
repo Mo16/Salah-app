@@ -114,6 +114,11 @@
                     </div>
                 </div>
                 <div class="card-container">
+                    <div class="quran card">
+                        <p>Hi there</p>
+                    </div>
+                </div>
+                <div class="card-container">
                     <div class="hadith card">
                         <p id="dayHadith">Supplication is the essence of worship.</p>
                     </div>
@@ -305,7 +310,7 @@
 
         setTimeout(() => {
             if (document.querySelector('.mosques-exist').innerHTML === 'no') {
-                cardCount = 2;
+                cardCount = cardCount - 1;
             }
         }, 1000)
         
