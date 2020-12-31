@@ -83,7 +83,7 @@ class Mosque {
 			mosques[data.value] = data;
 			mosquesJson = JSON.stringify(mosques,null,2);
 			console.log(`Writing ${this.dropdownid}\n`)
-			
+
 			if (Object.keys(mosqueList).length == counter){
 				console.log("Finished parsing all mosques")
 			}
@@ -105,3 +105,45 @@ var scrapeit = async function scrapeSite() {
 };
 
 module.exports = scrapeit;
+
+
+/*
+
+How to add a mosque:
+
+1) Locate the mosqueList.json file (in folder models)
+
+2) at the bottom add a comma after the last object if there isnt already one
+
+3) Fill out the template (At bottom of this guide) accordingly
+	city: make sure it is all lowercase
+	value: will be the name + "Data" at end EG jamimosqueData
+	dropdownid: How you will want it to appear in the drop down menu of the website EG Portsmouth Jami Mosque
+	name: same as value but without "Data"
+	longitude: get longitude of the mosque from google or whatever
+	latitude: same as longitude
+	namaz times: 	find the part where the namaz time is located on the site and then on inspect element right click it and copy js path and paste it
+					in the corresponding part
+	web: just the url where the namaz times are located 
+
+
+
+
+
+	"[name of the mosque]Data": {
+		"city": "",
+		"value": "",
+		"dropdownid": "",
+		"name": "",
+		"longitude": ,
+		"latitude": ,
+		"fajr": "",
+		"zuhr": "",
+		"asr": "",
+		"maghrib": "",
+		"esha": "",
+		"web": ""
+	},
+
+	
+*/
