@@ -298,6 +298,11 @@ section:hover .cursor {
     .next-start{
         height: 900px;
     }
+    .carousel-dots {
+        position: absolute;
+        top: 12em;
+        left: 19%;
+    }
 }
 
 @media all and (max-width: 1500px) {
@@ -779,9 +784,7 @@ canvas {
 .carousel-dots {
     margin: auto;
     text-align: center;
-    /* position: absolute;
-    bottom: 2em;
-    left: 50%; */
+    margin-bottom: 1em;
 }
 
 .carousel-dots ul {
