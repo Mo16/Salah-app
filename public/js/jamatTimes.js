@@ -1,3 +1,5 @@
+var noMosque;
+
 async function loadJamatTimes(city) {
     const response = await fetch("data/mosqueData.json");
     const data = await response.json();
@@ -35,7 +37,7 @@ function checkMosques(data,city){
 }
 
 function addLocation(){
-    alert("This service is currently unavailable.")
+    makeAlert("This service is currently unavailable.", false)
 }
 
 
@@ -98,7 +100,7 @@ function fillJamatTimes(times) {
 }
 
 function fillJamatTimesDesktop(times) {
-
+    noMosque = false;
 
     let m1title = document.querySelector('#mosque-1-title');
     let m2title = document.querySelector('#mosque-2-title');
@@ -139,7 +141,6 @@ function fillJamatTimesDesktop(times) {
         for (const value in mosque) {
             if (mosque.city === Cookies.get("city")) {
                 mosqueNames.push(mosque.dropdownid, mosque.fajr, mosque.zuhr, mosque.asr, mosque.maghrib, mosque.esha);
-            
             }
         }
     }).join("");
@@ -148,6 +149,9 @@ function fillJamatTimesDesktop(times) {
     switch(mosqueNames.length) {
         case 0:
             document.querySelector('.jamat-times-container').style.display = 'none';
+            document.querySelector('.jamat-card').remove();
+            noMosque = true;
+            document.querySelector('.mosques-exist').innerHTML = 'no';
 
         case 66:
             m1title.innerHTML = mosqueNames[0];
@@ -165,7 +169,7 @@ function fillJamatTimesDesktop(times) {
             m1maghrib.innerHTML = mosqueNames[4];
             m1isha.innerHTML = mosqueNames[5];
 
-
+            noMosque = false;
             
         case 132:
             m1title.innerHTML = mosqueNames[0];
@@ -187,6 +191,8 @@ function fillJamatTimesDesktop(times) {
             m2asr.innerHTML = mosqueNames[69];
             m2maghrib.innerHTML = mosqueNames[70];
             m2isha.innerHTML = mosqueNames[71];
+
+            noMosque = false;
         
         case 198:
             m1title.innerHTML = mosqueNames[0];
@@ -213,6 +219,8 @@ function fillJamatTimesDesktop(times) {
             m3asr.innerHTML = mosqueNames[135];
             m3maghrib.innerHTML = mosqueNames[136];
             m3isha.innerHTML = mosqueNames[137];
+
+            noMosque = false;
 
         case 264:
             m1title.innerHTML = mosqueNames[0];
@@ -243,6 +251,8 @@ function fillJamatTimesDesktop(times) {
             m4asr.innerHTML = mosqueNames[201];
             m4maghrib.innerHTML = mosqueNames[202];
             m4isha.innerHTML = mosqueNames[203];
+
+            noMosque = false;
     }
 
 }

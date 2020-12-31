@@ -108,7 +108,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-container">
+                <div class="card-container jamat-card">
                     <div class="next-jamat card">
                         <p class="next-jamat"><span class="next-jamat-name">Fajr</span> congregational prayer is at <span class="next-jamat-time">07:30</span> at <span class="next-jamat-mosque">Masjide Noor</span></p>
                     </div>
@@ -120,10 +120,8 @@
                 </div>
             </div>
             <div class="carousel-dots">
-                <ul>
-                    <li><span class="active-dot dot dot1"></span></li>
-                    <li><span class="dot dot2"></span></li>
-                    <li><span class="dot dot3"></span></li>
+                <ul class="carousel-ul">
+                    
                 </ul>
             </div>
         </div>
@@ -287,6 +285,7 @@
     <footer id="footer">
         <p>&#169; Salah Time Ltd. 2020</p>
     </footer>
+    <div class="mosques-exist" style="display: none;"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -300,6 +299,66 @@
     <script src="js/jamatTimes.js"></script>
     <script src="js/locating.js"></script>
     <script src="js/app.js"></script>
+
+    <script>
+        var cardCount = document.querySelector('.horizontal-scroll').childElementCount;
+
+        setTimeout(() => {
+            if (document.querySelector('.mosques-exist').innerHTML === 'no') {
+                cardCount = 2;
+            }
+        }, 1000)
+        
+        function addCarouselDots() {
+            let carousel = document.querySelector('.horizontal-scroll');
+            console.log('no of cards: '+ cardCount);
+
+            class carouselDot {
+                constructor(dotNumber) {
+                    this.dotNumber = dotNumber;
+                }
+                content() {
+                    return `<li><span class="dot dot${this.dotNumber}"></span></li>`;
+                } 
+            }
+
+            for (i = 0; i < cardCount; i++) {
+                let carouseld = new carouselDot(i+1);
+
+                document.querySelector('.carousel-ul').insertAdjacentHTML('beforeend', carouseld.content());
+            }
+        }
+
+        function checkCarouselScroll() {
+            let carousel = document.querySelector('.horizontal-scroll');
+            let maxScrollArea = carousel.scrollWidth;
+            let dotCount = document.querySelector('.carousel-ul').childElementCount;
+            let cardWidth = document.querySelector('.card-container').scrollWidth;
+
+            let dot1check = maxScrollArea/(cardCount)-cardWidth/2;
+            let dot3check = ((maxScrollArea/cardCount)*2)-cardWidth/2;
+
+            if (carousel.scrollLeft < dot1check) {
+                document.querySelector('.dot1').classList.add('active-dot');
+                document.querySelector('.dot2').classList.remove('active-dot');
+                document.querySelector('.dot3').classList.remove('active-dot');
+            } else if (carousel.scrollLeft > dot1check && carousel.scrollLeft < dot3check) {
+                document.querySelector('.dot1').classList.remove('active-dot');
+                document.querySelector('.dot2').classList.add('active-dot');
+                document.querySelector('.dot3').classList.remove('active-dot');
+            } else if ( carousel.scrollLeft > dot3check ) {
+                document.querySelector('.dot1').classList.remove('active-dot');
+                document.querySelector('.dot2').classList.remove('active-dot');
+                document.querySelector('.dot3').classList.add('active-dot');
+            }
+        }
+        
+        setTimeout(() => {
+            addCarouselDots();
+            checkCarouselScroll();
+        }, 1500)
+        
+    </script>
 
     
 </body>

@@ -12,10 +12,8 @@ function whichNamaz(data) {
       
       let namazTimeObject = new Date();
       let namazTime = namazTimeObject.setHours(namazHour, namazMin);
-      console.log(i, namazTime);
 
       if (namazTime < currentTime) {
-        console.log(namazTime, currentTime, namazTime < currentTime)
         counter++;
       }
     }
@@ -71,4 +69,8 @@ function calculateTimeRemaining(time) {
     }
 
     document.querySelector('.next-salah-in').innerHTML = `In ${remainingHours} hours and ${remainingMins} minutes`;
+
+    if (remainingHours === 0){
+      document.querySelector('.next-salah-in').innerHTML = `In ${remainingMins} minutes`;
+    }
 }

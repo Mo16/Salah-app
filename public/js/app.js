@@ -110,7 +110,12 @@ function hideAlert(isPostcode) {
                 window.scrollTo(0,0,);
             }, 2);
             
-        };
+        }
+    } else {
+        gsap.to('.alertContainer', {opacity: 0, filter: 'blur(100)', duration: 0.4});
+        setTimeout(() => {
+            document.querySelector('.alertContainer').style.display="none";
+        }, 500)
     }
 }
 
@@ -202,24 +207,6 @@ function clock() {
 
 clock();
 
-function checkCarouselScroll() {
-    let carousel = document.querySelector('.horizontal-scroll');
-    let maxScrollArea = window.innerWidth/0.6;
-
-    if (carousel.scrollLeft < maxScrollArea/3) {
-        document.querySelector('.dot1').classList.add('active-dot');
-        document.querySelector('.dot2').classList.remove('active-dot');
-        document.querySelector('.dot3').classList.remove('active-dot');
-    } else if (maxScrollArea/3 < carousel.scrollLeft && carousel.scrollLeft < (maxScrollArea/3)*2 ) {
-        document.querySelector('.dot1').classList.remove('active-dot');
-        document.querySelector('.dot2').classList.add('active-dot');
-        document.querySelector('.dot3').classList.remove('active-dot');
-    } else if ( carousel.scrollLeft > (maxScrollArea/3)*2 ) {
-        document.querySelector('.dot1').classList.remove('active-dot');
-        document.querySelector('.dot2').classList.remove('active-dot');
-        document.querySelector('.dot3').classList.add('active-dot');
-    }
-}
 
 if (Cookies.get('latitude') && Cookies.get('longitude') && Cookies.get('city')) {
     loadShow();
