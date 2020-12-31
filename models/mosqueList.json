@@ -110,5 +110,19 @@
 		"maghrib": "#content-section-2 > div > div > div.col-md-5.columns > div > div.col-md-12.simple-column > div > div > table > tbody > tr:nth-child(6) > td.masjidnow-salah-time-iqamah.masjidnow-maghrib",
 		"esha": "#content-section-2 > div > div > div.col-md-5.columns > div > div.col-md-12.simple-column > div > div > table > tbody > tr:nth-child(7) > td.masjidnow-salah-time-iqamah.masjidnow-isha",
 		"web": "https://centralmosque.co.uk"
-    }
+	},
+	"edinburghCentralData": {
+		"city": "edinburgh",
+		"value": "edinburghCentralData",
+		"dropdownid": "Edinburgh Central Mosque",
+		"name": "edinburghCentral",
+		"longitude": -3.1859,
+		"latitude": 55.9450,
+		"fajr": "#\\30  > td:nth-child(3) > h5",
+		"zuhr": "#\\32  > td:nth-child(3) > h5",
+		"asr": "#\\33  > td:nth-child(3) > h5",
+		"maghrib": "#\\34  > td:nth-child(2) > h5",
+		"esha": "#\\35  > td:nth-child(3) > h5",
+		"web": "https://edmosque.org"
+	}
 }
