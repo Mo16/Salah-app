@@ -239,3 +239,4 @@ if (Cookies.get('latitude') && Cookies.get('longitude') && Cookies.get('city')) 
     document.querySelector('.main').style.display="block";
 }
 
+console.log(window.innerWidth);

@@ -3,7 +3,7 @@ var selectedColor = "yellow"
 function whichNamaz(data) {
     namazTimes = [data.Fajr, data.Dhuhr, data.Asr, data.Maghrib, data.Isha];
     var today = new Date();
-    var currentTime = today.getHours() + ":" + today.getMinutes();
+    var currentTime = today.setHours(today.getHours(), today.getMinutes());
 
     var counter = 0;
     for (let i = 0; i < namazTimes.length; i++) {
@@ -12,6 +12,7 @@ function whichNamaz(data) {
       
       let namazTimeObject = new Date();
       let namazTime = namazTimeObject.setHours(namazHour, namazMin);
+      console.log(i, namazTime);
 
       if (namazTime < currentTime) {
         console.log(namazTime, currentTime, namazTime < currentTime)
