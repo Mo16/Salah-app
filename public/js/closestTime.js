@@ -1,4 +1,5 @@
-var selectedColor = "yellow"
+var selectedColor = "yellow";
+var prayer;
 
 function whichNamaz(data) {
     namazTimes = [data.Fajr, data.Dhuhr, data.Asr, data.Maghrib, data.Isha];
@@ -16,27 +17,34 @@ function whichNamaz(data) {
       if (namazTime < currentTime) {
         counter++;
       }
+
+      console.log(`counter is ${counter}`)
     }
 
-    if (currentTime > data.Isha) {
-        counter = 1;
+    if (counter === 6) {
+      counter = 1;
     }
 
     switch (counter) {
       case 1:
-        changeHTML("fajr","Fajr",data)
+        changeHTML("fajr","Fajr",data);
+        prayer = 'fajr';
         break;
       case 2:
-        changeHTML("dhuhr","Dhuhr",data)
+        changeHTML("dhuhr","Dhuhr",data);
+        prayer = 'zuhr';
         break;
       case 3:
-        changeHTML("asr","Asr",data)
+        changeHTML("asr","Asr",data);
+        prayer = 'asr';
         break;
       case 4:
-        changeHTML("maghrib","Maghrib",data)
+        changeHTML("maghrib","Maghrib",data);
+        prayer = 'maghrib';
         break;
       case 5:
-        changeHTML("isha","Isha",data)
+        changeHTML("isha","Isha",data);
+        prayer = 'isha';
         break;
     }
 }
@@ -49,6 +57,7 @@ function changeHTML(namaz,nextSalah,data){
   document.querySelector(`.${namaz}-start-time-name`).style.color = selectedColor;
   document.querySelector(`.${namaz}`).style.color = selectedColor;
   calculateTimeRemaining(data[nextSalah]);
+  console.log(`changed ${namaz} to ${data[nextSalah]}`);
 }
 
 function calculateTimeRemaining(time) {
@@ -73,4 +82,8 @@ function calculateTimeRemaining(time) {
     if (remainingHours === 0){
       document.querySelector('.next-salah-in').innerHTML = `In ${remainingMins} minutes`;
     }
+}
+
+function closestJamat(prayer) {
+  
 }
