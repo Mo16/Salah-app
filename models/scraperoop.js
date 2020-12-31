@@ -1,3 +1,5 @@
+// ignore this for now lmao
+
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 
@@ -83,14 +85,7 @@ class Mosque {
 
   saveToVariable(data){
 
-    return 
-  //   for (let i = 0; i < mosques.length; i++) {
-  //     if (this.value == mosques[i]){
-        
-  //     }
-      
-  //   }
-  //   console.log(jamimosqueData)
+    return this.value
 
   }
 
@@ -114,3 +109,5 @@ var mosques = [jamimosque = new Mosque(
 );]
 
 jamimosque.openSite();
+
+let 
