@@ -29,7 +29,6 @@ class Mosque {
 		});
 		const page = await browser.newPage();
 		await page.goto(this.url);
-
 		this.getTimes(page);
 	}
 
@@ -83,7 +82,6 @@ class Mosque {
 			mosques[data.value] = data;
 			mosquesJson = JSON.stringify(mosques,null,2);
 			console.log(`Writing ${this.dropdownid}\n`)
-
 			if (Object.keys(mosqueList).length == counter){
 				console.log("Finished parsing all mosques")
 			}
@@ -122,7 +120,7 @@ How to add a mosque:
 	name: same as value but without "Data"
 	longitude: get longitude of the mosque from google or whatever
 	latitude: same as longitude
-	namaz times: 	find the part where the namaz time is located on the site and then on inspect element right click it and copy js path and paste it
+	namaz times: 	find the part where the namaz time is located on the site and then on inspect element right click it and copy selector and paste it
 					in the corresponding part
 	web: just the url where the namaz times are located 
 
@@ -143,7 +141,7 @@ How to add a mosque:
 		"maghrib": "",
 		"esha": "",
 		"web": ""
-	},
+	}
 
-	
+
 */

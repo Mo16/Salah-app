@@ -305,7 +305,7 @@
 
         setTimeout(() => {
             if (document.querySelector('.mosques-exist').innerHTML === 'no') {
-                cardCount = cardCount - 1;
+                cardCount -= 1;
             }
         }, 1000)
         
@@ -323,7 +323,7 @@
             }
 
             for (i = 0; i < cardCount; i++) {
-                let carouseld = new carouselDot(i+1);
+                let carouseld = new carouselDot(i++);
 
                 document.querySelector('.carousel-ul').insertAdjacentHTML('beforeend', carouseld.content());
             }

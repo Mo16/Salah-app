@@ -110,5 +110,19 @@
 		"maghrib": "#content-section-2 > div > div > div.col-md-5.columns > div > div.col-md-12.simple-column > div > div > table > tbody > tr:nth-child(6) > td.masjidnow-salah-time-iqamah.masjidnow-maghrib",
 		"esha": "#content-section-2 > div > div > div.col-md-5.columns > div > div.col-md-12.simple-column > div > div > table > tbody > tr:nth-child(7) > td.masjidnow-salah-time-iqamah.masjidnow-isha",
 		"web": "https://centralmosque.co.uk"
-    }
+	},
+	"bricklaneamsjidData": {
+		"city": "london",
+		"value": "bricklanemasjid",
+		"dropdownid": "Brick Lane Masjid",
+		"name": "bricklanemasjid",
+		"longitude": -0.0741589,
+		"latitude": 51.5195029,
+		"fajr": "#table > tbody > tr:nth-child(2) > td:nth-child(2)",
+		"zuhr": "#table > tbody > tr:nth-child(2) > td:nth-child(3)",
+		"asr": "#table > tbody > tr:nth-child(2) > td:nth-child(4)",
+		"maghrib": "#table > tbody > tr:nth-child(2) > td:nth-child(5)",
+		"esha": "#table > tbody > tr:nth-child(2) > td:nth-child(6)",
+		"web": "https://bricklanejammemasjid.org.uk/"
+	}
 }

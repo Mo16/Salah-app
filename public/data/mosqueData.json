@@ -115,5 +115,18 @@
     "asr": "2:10pm",
     "maghrib": "4:03pm",
     "esha": "8:00pm"
+  },
+  "bricklanemasjidData": {
+    "city": "london",
+    "value": "bricklanemasjidData",
+    "dropdownid": "Brick Lane Masjid",
+    "name": "bricklanemasjid",
+    "longitude": -0.0741589,
+    "latitude": 51.5195029,
+    "fajr": "7:00",
+    "zuhr": "1:00",
+    "asr": "3:00",
+    "maghrib": "4:07",
+    "esha": "7:15"
   }
 }
