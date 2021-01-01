@@ -7,9 +7,9 @@
     "longitude": -2.2655507,
     "latitude": 53.460853,
     "fajr": "7:30",
-    "zuhr": "12:45",
+    "zuhr": "12:35",
     "asr": "3:00",
-    "maghrib": "4:02",
+    "maghrib": "4:03",
     "esha": "6:00"
   },
   "jamimosqueData": {
@@ -23,7 +23,7 @@
     "zuhr": "01:00",
     "asr": "02:45",
     "maghrib": "04:12",
-    "esha": "07:00"
+    "esha": "07:15"
   },
   "portsmouthcentralmosqueData": {
     "city": "portsmouth",
@@ -35,7 +35,7 @@
     "fajr": "7:00 AM",
     "zuhr": "1:00 PM",
     "asr": "3:00 PM",
-    "maghrib": "4:12 PM",
+    "maghrib": "4:13 PM",
     "esha": "7:15 PM"
   },
   "eastlondonmosqueData": {
@@ -45,11 +45,11 @@
     "name": "eastlondonmosque",
     "longitude": -0.0676762,
     "latitude": 51.5175695,
-    "fajr": "06:56",
-    "zuhr": "12:45",
-    "asr": "02:30",
-    "maghrib": "04:11",
-    "esha": "07:30"
+    "fajr": "6:46",
+    "zuhr": "1:00",
+    "asr": "2:45",
+    "maghrib": "4:12",
+    "esha": "7:30"
   },
   "masjidnoorData": {
     "city": "manchester",
@@ -60,9 +60,9 @@
     "latitude": 52.6461168,
     "fajr": "07:15",
     "zuhr": "01:00",
-    "asr": "03:00",
-    "maghrib": "04:02",
-    "esha": "07:00"
+    "asr": "02:45",
+    "maghrib": "04:04",
+    "esha": "06:00"
   },
   "didsburymosqueData": {
     "city": "manchester",
@@ -86,8 +86,8 @@
     "latitude": 55.852387,
     "fajr": "7:00am",
     "zuhr": "1:00pm",
-    "asr": "2:10pm",
-    "maghrib": "4:03pm",
+    "asr": "2:45pm",
+    "maghrib": "4:04pm",
     "esha": "8:00pm"
   },
   "finsburyparkmosqueData": {
@@ -99,8 +99,8 @@
     "latitude": 51.5689034,
     "fajr": "06:40",
     "zuhr": "12:30",
-    "asr": "14:00",
-    "maghrib": "16:11",
+    "asr": "14:15",
+    "maghrib": "16:12",
     "esha": "18:30"
   },
   "tesstData": {
@@ -126,7 +126,7 @@
     "fajr": "7:00",
     "zuhr": "1:00",
     "asr": "3:00",
-    "maghrib": "4:07",
+    "maghrib": "4:08",
     "esha": "7:15"
   },
   "edinburghCentralData": {
@@ -137,9 +137,22 @@
     "longitude": -3.1859,
     "latitude": 55.945,
     "fajr": "06:30",
-    "zuhr": "13:00",
-    "asr": "13:45",
-    "maghrib": "3:48 pm",
+    "zuhr": "12:10",
+    "asr": "14:00",
+    "maghrib": "3:52 pm",
     "esha": "19:00"
+  },
+  "masjidumarData": {
+    "city": "dewsbury",
+    "value": "masjidumarData",
+    "dropdownid": "Masjid E Umar",
+    "name": "masjidumar",
+    "longitude": -1.6295263,
+    "latitude": 53.6835615,
+    "fajr": "7:15 AM",
+    "zuhr": "12:45 PM",
+    "asr": "3:00 PM",
+    "maghrib": "4:01 PM",
+    "esha": "7:45 PM"
   }
 }

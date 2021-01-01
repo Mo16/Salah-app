@@ -82,9 +82,6 @@ class Mosque {
 			mosques[data.value] = data;
 			mosquesJson = JSON.stringify(mosques,null,2);
 			console.log(`Writing ${this.dropdownid}\n`)
-			if (Object.keys(mosqueList).length == counter){
-				console.log("Finished parsing all mosques")
-			}
 			fs.writeFileSync(
 				path.join(__dirname, "../public/data") + "/mosqueData.json",
 				mosquesJson,
@@ -92,6 +89,9 @@ class Mosque {
 			);
 		} catch (error) {
 			console.log(`could not write because: ${error}`);
+		}
+		if (Object.keys(mosqueList).length == counter){
+			console.log("Finished parsing all mosques")
 		}
 	}
 }

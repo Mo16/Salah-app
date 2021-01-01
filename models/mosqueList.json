@@ -124,5 +124,33 @@
 		"maghrib": "#table > tbody > tr:nth-child(2) > td:nth-child(5)",
 		"esha": "#table > tbody > tr:nth-child(2) > td:nth-child(6)",
 		"web": "https://bricklanejammemasjid.org.uk/"
+	},
+	"edinburghCentralData": {
+		"city": "edinburgh",
+		"value": "edinburghCentralData",
+		"dropdownid": "Edinburgh Central Mosque",
+		"name": "edinburghCentral",
+		"longitude": -3.1859,
+		"latitude": 55.9450,
+		"fajr": "#\\30  > td:nth-child(3) > h5",
+		"zuhr": "#\\32  > td:nth-child(3) > h5",
+		"asr": "#\\33  > td:nth-child(3) > h5",
+		"maghrib": "#\\34  > td:nth-child(2) > h5",
+		"esha": "#\\35  > td:nth-child(3) > h5",
+		"web": "https://edmosque.org"
+	},
+	"masjideumarData": {
+		"city": "dewsbury",
+		"value": "masjidumardata",
+		"dropdownid": "Masjid E Umar",
+		"name": "masjidumar",
+		"longitude": -1.6295263,
+		"latitude": 53.6835615,
+		"fajr": "#fajr-time",
+		"zuhr": "#duhr-time",
+		"asr": "#asr-time",
+		"maghrib": "#maghrib-time",
+		"esha": "#isha-time",
+		"web": "https://masjideumar.co.uk/"
 	}
 }
