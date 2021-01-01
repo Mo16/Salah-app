@@ -128,5 +128,18 @@
     "asr": "3:00",
     "maghrib": "4:07",
     "esha": "7:15"
+  },
+  "edinburghCentralData": {
+    "city": "edinburgh",
+    "value": "edinburghCentralData",
+    "dropdownid": "Edinburgh Central Mosque",
+    "name": "edinburghCentral",
+    "longitude": -3.1859,
+    "latitude": 55.945,
+    "fajr": "06:30",
+    "zuhr": "13:00",
+    "asr": "13:45",
+    "maghrib": "3:48 pm",
+    "esha": "19:00"
   }
 }
