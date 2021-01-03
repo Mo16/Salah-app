@@ -7,9 +7,9 @@
     "longitude": -2.2655507,
     "latitude": 53.460853,
     "fajr": "7:30",
-    "zuhr": "12:35",
+    "zuhr": "12:45",
     "asr": "3:00",
-    "maghrib": "4:03",
+    "maghrib": "4:05",
     "esha": "6:00"
   },
   "jamimosqueData": {
@@ -22,7 +22,7 @@
     "fajr": "07:00",
     "zuhr": "01:00",
     "asr": "02:45",
-    "maghrib": "04:12",
+    "maghrib": "04:14",
     "esha": "07:15"
   },
   "portsmouthcentralmosqueData": {
@@ -35,7 +35,7 @@
     "fajr": "7:00 AM",
     "zuhr": "1:00 PM",
     "asr": "3:00 PM",
-    "maghrib": "4:13 PM",
+    "maghrib": "4:15 PM",
     "esha": "7:15 PM"
   },
   "eastlondonmosqueData": {
@@ -46,9 +46,9 @@
     "longitude": -0.0676762,
     "latitude": 51.5175695,
     "fajr": "6:46",
-    "zuhr": "1:00",
+    "zuhr": "12:45",
     "asr": "2:45",
-    "maghrib": "4:12",
+    "maghrib": "4:15",
     "esha": "7:30"
   },
   "masjidnoorData": {
@@ -61,8 +61,8 @@
     "fajr": "07:15",
     "zuhr": "01:00",
     "asr": "02:45",
-    "maghrib": "04:04",
-    "esha": "06:00"
+    "maghrib": "04:06",
+    "esha": "06:15"
   },
   "didsburymosqueData": {
     "city": "manchester",
@@ -87,7 +87,7 @@
     "fajr": "7:00am",
     "zuhr": "1:00pm",
     "asr": "2:45pm",
-    "maghrib": "4:04pm",
+    "maghrib": "4:07pm",
     "esha": "8:00pm"
   },
   "finsburyparkmosqueData": {
@@ -100,7 +100,7 @@
     "fajr": "06:40",
     "zuhr": "12:30",
     "asr": "14:15",
-    "maghrib": "16:12",
+    "maghrib": "16:15",
     "esha": "18:30"
   },
   "tesstData": {
@@ -126,7 +126,7 @@
     "fajr": "7:00",
     "zuhr": "1:00",
     "asr": "3:00",
-    "maghrib": "4:08",
+    "maghrib": "4:10",
     "esha": "7:15"
   },
   "edinburghCentralData": {
@@ -137,9 +137,9 @@
     "longitude": -3.1859,
     "latitude": 55.945,
     "fajr": "06:30",
-    "zuhr": "12:10",
+    "zuhr": "13:00",
     "asr": "14:00",
-    "maghrib": "3:52 pm",
+    "maghrib": "3:54 pm",
     "esha": "19:00"
   },
   "masjidumarData": {
@@ -152,7 +152,7 @@
     "fajr": "7:15 AM",
     "zuhr": "12:45 PM",
     "asr": "3:00 PM",
-    "maghrib": "4:01 PM",
-    "esha": "7:45 PM"
+    "maghrib": "4:03 PM",
+    "esha": "6:00 PM"
   }
 }

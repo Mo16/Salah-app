@@ -59,7 +59,8 @@ async function getCity(longitude, latitude) {
     const response = await fetch(`https://geocode.xyz/${latitude},${longitude}?json=1`);
 
     let data = await response.json();
-    let city = await validateCity(data);
+    let city = await validateCity(data)
+    
 
     Cookies.set("city", city, {expires: 9999, samesite: 'lax'});
     document.querySelector('.location p').innerHTML = Cookies.get("city")
@@ -79,12 +80,12 @@ async function validateCity(data, cities) {
     Object.values(mosqueDataJson).map((mosque) => {
         mosqueCities.push(mosque.city);
     }).join('');
-
     try {
-         if (mosqueCities.includes((data.adminareas.admin6.name).toLowerCase())) {
-             city = data.adminareas.admin6.name;
+         if (mosqueCities.includes((data.city).toLowerCase())) {
+            city = data.city;
          } else {
-             city = data.city;
+            city = data.adminareas.admin6.name;
+            
          }
     }
     catch(err) {
