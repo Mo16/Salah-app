@@ -10,6 +10,7 @@ async function loadJamatTimes(city) {
     
 }
 
+
 function checkMosques(data,city){
     var is_mobile = !!navigator.userAgent.match(/iphone|android|blackberry/ig) || false;
 
@@ -69,6 +70,7 @@ async function getTimesForMosque() {
 function setDefaultMosque(){
     value = document.querySelector('select').value;
     Cookies.set("defaultMosque",value,{expires: 9999, samesite: 'lax'})
+    setDefaultMosqueName(value)
     Toast = Swal.mixin({
         toast: true,
         position: "center",
@@ -82,6 +84,14 @@ function setDefaultMosque(){
         icon: 'success',
         title: 'Mosque has been saved!'
       }) 
+}
+
+
+async function setDefaultMosqueName(value){
+    const response = await fetch("data/mosqueData.json");
+    const data = await response.json();
+
+    Cookies.set("defaultMosqueValue",data[value].dropdownid,{expires: 9999, samesite: 'lax'})
 }
 
 async function showDefaultMosque(data){

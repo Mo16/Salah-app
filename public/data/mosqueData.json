@@ -103,19 +103,6 @@
     "maghrib": "16:17",
     "esha": "18:30"
   },
-  "tesstData": {
-    "city": "test",
-    "value": "tesstData",
-    "dropdownid": "test Central Mosque",
-    "name": "tesst",
-    "longitude": -4.251607,
-    "latitude": 55.852387,
-    "fajr": "7:00am",
-    "zuhr": "1:00pm",
-    "asr": "2:10pm",
-    "maghrib": "4:03pm",
-    "esha": "8:00pm"
-  },
   "bricklanemasjidData": {
     "city": "london",
     "value": "bricklanemasjidData",

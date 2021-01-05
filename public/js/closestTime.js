@@ -114,39 +114,34 @@ function calculateTimeRemaining(time) {
   return [remainingHours, remainingMins];
 }
 
-function closestJamat() {
-  var timeRemaining;
-  
+function closestJamat() {  
   switch (prayer) {
     case 'fajr':
-      document.querySelector('.next-jamat-name').innerHTML = 'Fajr:';
-      document.querySelector('.next-jamat-time').innerHTML = document.querySelector('.j-fajr').innerHTML;
-      timeRemaining = calculateTimeRemaining(document.querySelector('.j-fajr').innerHTML);
-      document.querySelector('.next-jamat-in').innerHTML = `In ${timeRemaining[0]} hours and ${timeRemaining[1]} minutes at ${document.querySelector('select').value}`;
+      changeJamatSlide("fajr","Fajr")
       break;
     case 'zuhr':
-      document.querySelector('.next-jamat-name').innerHTML = 'Dhuhr:';
-      document.querySelector('.next-jamat-time').innerHTML = document.querySelector('.j-zuhr').innerHTML;
-      timeRemaining = calculateTimeRemaining(document.querySelector('.j-zuhr').innerHTML);
-      document.querySelector('.next-jamat-in').innerHTML = `In ${timeRemaining[0]} hours and ${timeRemaining[1]} minutes at ${document.querySelector('select').value}`;
+      changeJamatSlide("zuhr","Zuhr")
       break;
     case 'asr':
-      document.querySelector('.next-jamat-name').innerHTML = 'Asr:';
-      document.querySelector('.next-jamat-time').innerHTML = document.querySelector('.j-asr').innerHTML;
-      timeRemaining = calculateTimeRemaining(document.querySelector('.j-asr').innerHTML);
-      document.querySelector('.next-jamat-in').innerHTML = `In ${timeRemaining[0]} hours and ${timeRemaining[1]} minutes at ${document.querySelector('select').value}`;
+      changeJamatSlide("asr","Asr")
       break;
     case 'maghrib':
-      document.querySelector('.next-jamat-name').innerHTML = 'Mahgrib:';
-      document.querySelector('.next-jamat-time').innerHTML = document.querySelector('.j-maghrib').innerHTML;
-      timeRemaining = calculateTimeRemaining(document.querySelector('.j-maghrib').innerHTML);
-      document.querySelector('.next-jamat-in').innerHTML = `In ${timeRemaining[0]} hours and ${timeRemaining[1]} minutes at ${document.querySelector('select').value}`;
+      changeJamatSlide("maghrib","Maghrib")
       break;
     case 'isha':
-      document.querySelector('.next-jamat-name').innerHTML = 'Isha:';
-      document.querySelector('.next-jamat-time').innerHTML = document.querySelector('.j-isha').innerHTML;
-      timeRemaining = calculateTimeRemaining(document.querySelector('.j-isha').innerHTML);
-      document.querySelector('.next-jamat-in').innerHTML = `In ${timeRemaining[0]} hours and ${timeRemaining[1]} minutes at ${document.querySelector('select').value}`;
+      changeJamatSlide("isha","Isha")
       break;
   }
+}
+
+function changeJamatSlide(namaz,capitalNamaz){
+  var timeRemaining;
+  document.querySelector('.next-jamat-name').innerHTML = capitalNamaz +":";
+    if (Cookies.get("defaultMosqueValue")){
+      document.querySelector('.next-jamat-time').innerHTML = document.querySelector(`.j-${namaz}`).innerHTML;
+      timeRemaining = calculateTimeRemaining(document.querySelector(`.j-${namaz}`).innerHTML);
+      document.querySelector('.next-jamat-in').innerHTML = `In ${timeRemaining[0]} hours and ${timeRemaining[1]} minutes at ${Cookies.get("defaultMosqueValue")}`;
+    }else{
+      document.querySelector('.next-jamat-in').innerHTML = "Please select a default mosque to display data here"
+    }
 }

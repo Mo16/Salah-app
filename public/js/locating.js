@@ -13,6 +13,7 @@ function getLocation() {
 function savePosition(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
+    console.log(`geolocation ${longitude} ${latitude}`)
 
     Cookies.set("longitude", longitude, { expires: 9999, samesite: "lax" });
     Cookies.set("latitude", latitude, { expires: 9999, samesite: "lax" });
@@ -36,6 +37,7 @@ async function postCodeLocate(postcode) {
     if (data.status == 200) {
         let longitude = data.result.longitude;
         let latitude = data.result.latitude;
+        console.log(longitude,latitude)
         document.querySelector("section").style.display = "block";
         document.querySelector(".main").style.display = "none";
         Cookies.set("longitude", longitude, { expires: 9999 });
@@ -85,6 +87,8 @@ async function validateCity(data, cities) {
     var city;
     let mosqueCities = [];
     console.log(data)
+    console.log(data.city)
+    console.log(data.adminareas)
 
     Object.values(mosqueDataJson)
         .map((mosque) => {

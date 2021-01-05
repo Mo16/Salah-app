@@ -14,6 +14,11 @@ app.get("/support", (req, res) => {
   res.render("support.ejs");
 })
 
+app.get("/addmosque", (req, res) => {
+  
+  res.render("addMosque.ejs");
+})
+
 
 app.listen(process.env.PORT || 3000, function () {});
 

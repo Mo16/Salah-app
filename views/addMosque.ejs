@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="M R">
+    <meta name="description" content="Salah Times based on location">
+    <title>Salah Times</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/support.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body onload="checkPhone()">
+    <div class="cursor"></div>
+    
+    <div class="loadicon">
+        <img src="assets/loading.gif">
+    </div>
+    <div class="portrait-mode">
+        <p>This page is best viewed in portrait mode. Please rotate your screen.</p>
+    </div>
+    <div class="alertContainer">
+        <div class="alertheader">
+            <p>Alert</p>
+        </div>
+        <div class="alertbody">
+            <div class="alertMessage">
+                Geolocation not supported.
+            </div>
+            <div class="postcode-entrybox-container">
+                <div class="postcode-entrybox">
+                    <input type="text" name="postcode-box" class="postcode-box" id="postcode-box" required/>
+                    <label for="postcode-box" class="postcode-box-label">
+                        <span class="postcode-box-content">Postcode</span>
+                    </label>
+                </div>
+            </div>
+            <a class="btnok" href="#" onclick="hideAlert(false)">
+                <span class="material-icons">check</span>
+                Okay
+            </a>
+            <a class="btnok forPostcode" href="#learnsection" onclick="hideAlert(true)">
+                <span class="material-icons">check</span>
+                Okay
+            </a>
+            <p class="postcode-error">Please enter a valid UK postcode.</p>
+        </div>
+    </div>
+    <main class="maincontainer">
+        <nav>
+            <p class="brand">Salah Times</p>
+            <ul class="navlist">
+                <li><a class="navlink" href="/">Home</a></li>
+                <li><a  class="navlink" href="#" style="background-color: var(--complementary-dark); color: white;">Support</a></li>
+            </ul>
+            <div class="expandnav" onclick="navOpen()">
+                <span class="material-icons" id="hamburgericon">drag_handle</span>
+            </div>
+        </nav>
+        <div class="navphone">
+            <ul class="navlistPhone">
+                <li><a href="/" onclick="navClose()">Home</a></li>
+                <li><a href="#" onclick="navClose()">Support</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <div class='support-main'>
+    <label for="mosqueName">mosque name</label>
+    <input type="text" name="mosqueName" id="mosqueName">
+    <br>
+    <label for="url">url</label>
+    <input type="text" name="url" id="url">
+    <br>
+    <label for="city">city</label>
+    <input type="text" name="city" id="city">
+    <br>
+
+        <button onclick="sendData()">send dat data boi</button>
+    </div>
+    
+
+
+
+    <footer id="footer">
+        <p>&#169; Salah Time Ltd. 2020</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+    <script src="js/backgroundChange.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/app-support.js"></script>
+
+    <script>
+        if (document.cookie) {
+            dayOrNight();
+        }
+    </script>
+</body>
+</html>
